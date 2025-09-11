@@ -1,0 +1,95 @@
+{
+  "useApiScoring": false,
+  "allowNegativeMarks": true,
+  "negativePointsPerQuestion": 10,
+  "skipPenaltyPointsPerQuestion":0,
+  "lifelinePenaltyPointsPerLifeline":5,
+  "gameShowMode": "Solo",
+  "questions": [
+    {
+      "id": 1,
+      "text": "What is the capital of France?",
+      "image": "https://example.com/images/paris.jpg",
+      "options": ["London", "Berlin", "Paris", "Madrid"],
+      "correctAnswer": 2,
+      "category": "Geography"
+    },
+    {
+      "id": 2,
+      "text": "Which planet is known as the Red Planet?",
+      "image": "https://example.com/images/mars.jpg",
+      "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "correctAnswer": 1,
+      "category": "Science"
+    },
+    {
+      "id": 3,
+      "text": "Who painted the Mona Lisa?",
+      "image": "https://example.com/images/monalisa.jpg",
+      "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+      "correctAnswer": 2,
+      "category": "Art"
+
+    },
+    {
+      "id": 4,
+      "text": "What is the largest ocean on Earth?",
+      "category": "Geography",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "correctAnswer": 3,
+      "image": "https://example.com/images/pacific_ocean.jpg"
+    },
+    {
+      "id": 5,
+      "text": "In which year did World War II end?",
+      "image": "https://example.com/images/ww2.jpg",
+      "options": ["1943", "1944", "1945", "1946"],
+      "correctAnswer": 2,
+      "category": "History"
+    },
+    {
+      "id": 6,
+      "text": "What is the chemical symbol for gold?",
+      "image": "https://example.com/images/gold.jpg",
+      "options": ["Go", "Au", "Gd", "Ag"],
+      "correctAnswer": 1,
+      "category": "Science"
+    },
+    {
+      "id": 7,
+      "text": "Who wrote 'Romeo and Juliet'?",
+      "image": "https://example.com/images/shakespeare.jpg",
+      "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "text": "What is the tallest mountain in the world?",
+      "image": "https://example.com/images/everest.jpg",
+      "category": "Geography",
+      "options": ["K2", "Kangchenjunga", "Mount Everest", "Lhotse"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "text": "How many continents are there?",
+      "image": "https://example.com/images/continents.jpg",
+      "category": "Geography",
+      "options": ["5", "6", "7", "8"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "text": "What is the speed of light?",
+      "options": ["299,792 km/s", "199,792 km/s", "399,792 km/s", "499,792 km/s"],
+      "correctAnswer": 0,
+      "category": "Science",
+      "image": "https://example.com/images/speed_of_light.jpg"
+    }
+  ],
+  "timerDuration": 30,
+  "targetScore": 99,
+  "pointsPerQuestion": 11,
+  "totalQuestions": 10,
+  "allowAnswerReview": true
+}
