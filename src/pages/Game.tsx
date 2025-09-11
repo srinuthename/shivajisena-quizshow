@@ -673,9 +673,12 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
   onNextQuestion={handleNextQuestion}
   onDisplayResults={handleDisplayResults}
   onStartGame={handleStartGame}
-  isPaused={isPaused}                    // ⬅️ NEW
-  onTogglePause={() => setIsPaused(p => !p)} // ⬅️ NEW
+  isPaused={isPaused}
+  onTogglePause={() => setIsPaused(p => !p)}
   isLoading={isLoading}
+  fetchViewerVotes={fetchViewerVotes}
+  allowAnswerReview={allowAnswerReview}
+  isLastQuestion={gameState.currentQuestion === questions.length - 1}
 />
 
 
