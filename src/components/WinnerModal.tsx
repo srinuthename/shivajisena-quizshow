@@ -40,15 +40,15 @@ export function WinnerModal({
         <DialogContent className="max-w-2xl">
           <DialogHeader className="text-center">
             <div className="relative inline-flex items-center justify-center mb-6">
-              <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-academic-gold to-academic-star opacity-50 rounded-full animate-pulse" />
-              <div className="text-6xl relative z-10 animate-academic-glow">🏆</div>
+              <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-biblical-gold to-biblical-crown opacity-50 rounded-full animate-pulse" />
+              <div className="text-6xl relative z-10 animate-biblical-glow">🏆</div>
             </div>
             
-            <DialogTitle className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-academic-gold to-academic-star bg-clip-text text-transparent">
+            <DialogTitle className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-biblical-gold to-biblical-crown bg-clip-text text-transparent">
               Quiz Vijetha!
             </DialogTitle>
             
-            <p className="text-xl text-academic-text mb-6">
+            <p className="text-xl text-biblical-text mb-6">
               Congratulations! on your achievement.
             </p>
           </DialogHeader>
@@ -75,7 +75,7 @@ export function WinnerModal({
           {/* Prize Table */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-              <Gift className="h-5 w-5 text-academic-gold" />
+              <Gift className="h-5 w-5 text-biblical-gold" />
               Prize Structure
             </h3>
             <div className="glass-card rounded-xl p-4">
@@ -89,12 +89,12 @@ export function WinnerModal({
                       (index === 2 && correctAnswers >= 9) ||
                       (index === 3 && correctAnswers >= 10) ||
                       (index === 4 && correctAnswers >= 11)
-                        ? 'bg-academic-gold/20 border border-academic-gold/30' 
+                        ? 'bg-biblical-gold/20 border border-biblical-gold/30' 
                         : 'bg-muted/20'
                     }`}
                   >
                     <span className="font-medium">{item.answers}</span>
-                    <span className="text-academic-gold font-semibold">{item.prize}</span>
+                    <span className="text-biblical-gold font-semibold">{item.prize}</span>
                   </div>
                 ))}
               </div>

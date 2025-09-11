@@ -20,20 +20,20 @@ export function WinnerScreen({ score, questionsAnswered, onClose }: WinnerScreen
         <div className="glass-card rounded-3xl p-12 max-w-2xl w-full text-center animate-slide-up">
           {/* Achievement Icon */}
           <div className="relative inline-flex items-center justify-center mb-8">
-            <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-academic-gold to-academic-star opacity-50 rounded-full animate-pulse" />
-            <Crown className="h-20 w-20 text-academic-gold relative z-10 animate-bounce" />
+            <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-biblical-gold to-biblical-crown opacity-50 rounded-full animate-pulse" />
+            <Crown className="h-20 w-20 text-biblical-gold relative z-10 animate-bounce" />
           </div>
 
           {/* Winner Text */}
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-academic-gold to-academic-star bg-clip-text text-transparent animate-pulse-academic">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-biblical-gold to-biblical-crown bg-clip-text text-transparent animate-pulse-biblical">
             Kudos!
           </h1>
 
           {/* Congratulations */}
-          <p className="text-xl text-academic-text mb-2">
+          <p className="text-xl text-biblical-text mb-2">
             on your wonderful <span className="font-semibold">participation</span>!
           </p>
-          <p className="text-lg text-academic-muted mb-8">
+          <p className="text-lg text-biblical-muted mb-8">
             Don’t forget to collect your Prize 🎁
           </p>
 
@@ -71,7 +71,7 @@ export function WinnerScreen({ score, questionsAnswered, onClose }: WinnerScreen
               onClick={() => setShowPrizeModal(true)}
               size="lg"
               variant="outline"
-              className="border-academic-gold text-academic-gold hover:bg-academic-gold/10"
+              className="border-biblical-gold text-biblical-gold hover:bg-biblical-gold/10"
             >
               View Prize
             </Button>

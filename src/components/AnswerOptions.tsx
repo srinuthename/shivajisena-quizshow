@@ -35,7 +35,7 @@ export function AnswerOptions({
       return "opacity-40 cursor-not-allowed border-2 border-muted bg-muted/10 relative";
     }
     if (isRevealed && correctAnswer === index) {
-      return "border-4 border-academic-gold bg-academic-gold/20 shadow-lg ring-4 ring-academic-gold/30 glow-success";
+      return "border-4 border-biblical-gold bg-biblical-gold/20 shadow-lg ring-4 ring-biblical-gold/30 glow-success";
     }
     if (isRevealed && finalAnswer === index && correctAnswer !== index) {
       return "border-4 border-destructive bg-destructive/20 shadow-lg ring-4 ring-destructive/30";
@@ -92,8 +92,8 @@ export function AnswerOptions({
             {/* Icons for correct/wrong */}
             {isRevealed && correctAnswer === index && (
               <div className="relative">
-                <div className="absolute inset-0 bg-academic-gold blur-lg animate-pulse-academic" />
-                <Check className="relative h-6 w-6 text-academic-gold" />
+                <div className="absolute inset-0 bg-biblical-gold blur-lg animate-pulse-biblical" />
+                <Check className="relative h-6 w-6 text-biblical-gold" />
               </div>
             )}
             {isRevealed && finalAnswer === index && correctAnswer !== index && (
@@ -105,8 +105,8 @@ export function AnswerOptions({
           {viewerVotes.length > 0 && (
             <>
               <div className="mt-3 flex items-center justify-between text-sm">
-                <span className="text-academic-muted">Viewer votes</span>
-                <span className="font-bold text-academic-gold">
+                <span className="text-biblical-muted">Viewer votes</span>
+                <span className="font-bold text-biblical-gold">
                   {viewerVotePercentages[index]}%
                 </span>
               </div>
@@ -120,7 +120,7 @@ export function AnswerOptions({
                   </Avatar>
                 ))}
                 {getViewersForOption(index).length > 8 && (
-                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-academic-dark/60 text-academic-text text-xs border-2 border-background">
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-biblical-dark/60 text-biblical-text text-xs border-2 border-background">
                     +{getViewersForOption(index).length - 8}
                   </div>
                 )}

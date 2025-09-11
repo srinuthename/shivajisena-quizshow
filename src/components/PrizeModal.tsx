@@ -19,7 +19,7 @@ const prizeTable = [
   { answers: "7 Questions Correct", prize: "₹100 or equivalent", icon: <CheckCircle className="h-5 w-5 text-green-500" />, key: "q7" },
   { answers: "8 Questions Correct", prize: "₹150 or equivalent", icon: <Award className="h-5 w-5 text-blue-500" />, key: "q8" },
   { answers: "9 Questions Correct", prize: "₹200 or equivalent", icon: <Trophy className="h-5 w-5 text-yellow-500" />, key: "q9" },
-  { answers: `> ${GAME_CONSTANTS.DEFAULT_TARGET_SCORE} score at the end of the Quiz`, prize: "Quiz Vijetha Title", icon: <Crown className="h-5 w-5 text-academic-gold" />, key: "title" },
+  { answers: `> ${GAME_CONSTANTS.DEFAULT_TARGET_SCORE} score at the end of the Quiz`, prize: "Quiz Vijetha Title", icon: <Crown className="h-5 w-5 text-biblical-gold" />, key: "title" },
 ];
 
 export function PrizeModal({ isOpen, onClose, score, questionsAnswered }: PrizeModalProps) {
@@ -39,7 +39,7 @@ export function PrizeModal({ isOpen, onClose, score, questionsAnswered }: PrizeM
       <DialogContent className="max-w-2xl" aria-describedby={undefined}>
         <DialogHeader className="text-center">
           <DialogTitle className="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
-            <Gift className="h-6 w-6 text-academic-gold" />
+            <Gift className="h-6 w-6 text-biblical-gold" />
             Prize Structure
           </DialogTitle>
         </DialogHeader>
@@ -53,17 +53,17 @@ export function PrizeModal({ isOpen, onClose, score, questionsAnswered }: PrizeM
                   key={item.key} 
                   className={`flex justify-between items-center p-4 rounded-lg border 
                     ${isEarned 
-                      ? "bg-academic-gold/20 border-academic-gold shadow-lg scale-[1.02]" 
+                      ? "bg-biblical-gold/20 border-biblical-gold shadow-lg scale-[1.02]" 
                       : "bg-gradient-subtle border-white/10"
                     }`}
                 >
                   <div className="flex items-center gap-3">
                     {item.icon}
-                    <span className={`font-medium text-lg ${isEarned ? "text-academic-gold" : ""}`}>
+                    <span className={`font-medium text-lg ${isEarned ? "text-biblical-gold" : ""}`}>
                       {item.answers}
                     </span>
                   </div>
-                  <span className={`font-semibold text-lg flex items-center gap-2 ${isEarned ? "text-academic-gold" : "text-academic-muted"}`}>
+                  <span className={`font-semibold text-lg flex items-center gap-2 ${isEarned ? "text-biblical-gold" : "text-biblical-muted"}`}>
                     {item.prize}
                   </span>
                 </div>

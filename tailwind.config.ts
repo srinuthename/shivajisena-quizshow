@@ -67,13 +67,13 @@ export default {
 					warning: 'hsl(var(--timer-warning))',
 					safe: 'hsl(var(--timer-safe))'
 				},
-				'academic-gold': 'hsl(var(--academic-gold))',
-				'academic-star': 'hsl(var(--academic-star))',
-				'academic-primary': 'hsl(var(--academic-primary))',
-				'academic-secondary': 'hsl(var(--academic-secondary))',
-				'academic-dark': 'hsl(var(--academic-dark))',
-				'academic-text': 'hsl(var(--academic-text))',
-				'academic-muted': 'hsl(var(--academic-muted))'
+				'biblical-gold': 'hsl(var(--biblical-gold))',
+				'biblical-crown': 'hsl(var(--biblical-crown))',
+				'biblical-primary': 'hsl(var(--biblical-primary))',
+				'biblical-secondary': 'hsl(var(--biblical-secondary))',
+				'biblical-dark': 'hsl(var(--biblical-dark))',
+				'biblical-text': 'hsl(var(--biblical-text))',
+				'biblical-muted': 'hsl(var(--biblical-muted))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

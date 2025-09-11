@@ -71,14 +71,15 @@ All colors MUST be HSL.
     --timer-warning: 45 100% 50%;
     --timer-safe: 120 70% 50%;
     
-    /* Elegant Game Show Colors */
-    --academic-gold: 45 100% 60%;
-    --academic-star: 55 100% 65%;
-    --academic-primary: 189 85% 45%;
-    --academic-secondary: 320 100% 70%;
-    --academic-dark: 189 60% 12%;
-    --academic-text: 189 30% 85%;
-    --academic-muted: 189 25% 50%;
+    
+    /* Biblical Theme Colors */
+    --biblical-gold: 45 100% 50%;
+    --biblical-crown: 40 95% 55%;
+    --biblical-primary: 189 85% 45%;
+    --biblical-secondary: 320 100% 70%;
+    --biblical-dark: 30 20% 15%;
+    --biblical-text: 45 30% 85%;
+    --biblical-muted: 30 25% 50%;
 
     --sidebar-background: 250 35% 12%;
     --sidebar-foreground: 0 0% 98%;
@@ -178,18 +179,18 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes academic-glow {
+@keyframes biblical-glow {
   0%, 100% {
     transform: scale(1);
-    filter: brightness(1) drop-shadow(0 0 20px hsl(175 45% 45% / 0.7));
+    filter: brightness(1) drop-shadow(0 0 20px hsl(45 100% 50% / 0.7));
   }
   50% {
     transform: scale(1.1);
-    filter: brightness(1.5) drop-shadow(0 0 40px hsl(175 45% 45% / 1));
+    filter: brightness(1.5) drop-shadow(0 0 40px hsl(45 100% 50% / 1));
   }
 }
 
-@keyframes pulse-academic {
+@keyframes pulse-biblical {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
@@ -249,7 +250,7 @@ All colors MUST be HSL.
   backdrop-filter: blur(20px);
 }
 
-.glass-card-academic {
+.glass-card-biblical {
   @apply backdrop-blur-xl border border-accent/40;
   background: linear-gradient(135deg, 
     hsl(var(--primary) / 0.15), 
@@ -259,16 +260,16 @@ All colors MUST be HSL.
   box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
-.shadow-academic {
-  box-shadow: 0 0 30px hsl(var(--academic-gold) / 0.3);
+.shadow-biblical {
+  box-shadow: 0 0 30px hsl(var(--biblical-gold) / 0.3);
 }
 
-.drop-shadow-academic {
-  filter: drop-shadow(0 0 10px hsl(var(--academic-gold) / 0.5));
+.drop-shadow-biblical {
+  filter: drop-shadow(0 0 10px hsl(var(--biblical-gold) / 0.5));
 }
 
-.gradient-academic-primary {
-  background: linear-gradient(135deg, hsl(var(--academic-primary)), hsl(var(--academic-secondary)));
+.gradient-biblical-primary {
+  background: linear-gradient(135deg, hsl(var(--biblical-primary)), hsl(var(--biblical-secondary)));
 }
 
 .glow-primary {
@@ -307,12 +308,12 @@ All colors MUST be HSL.
   animation: slide-up 0.5s ease-out;
 }
 
-.animate-academic-glow {
-  animation: academic-glow 3s ease-in-out infinite;
+.animate-biblical-glow {
+  animation: biblical-glow 3s ease-in-out infinite;
 }
 
-.animate-pulse-academic {
-  animation: pulse-academic 2s ease-in-out infinite;
+.animate-pulse-biblical {
+  animation: pulse-biblical 2s ease-in-out infinite;
 }
 
 .animate-flicker {

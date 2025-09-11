@@ -65,7 +65,7 @@ export function HostControls({
             <Button
               onClick={onLockAnswer}
               size="lg"
-              className="w-full h-16 border-2 border-academic-gold hover:bg-academic-gold/20 hover:glow-success"
+              className="w-full h-16 border-2 border-biblical-gold hover:bg-biblical-gold/20 hover:glow-success"
               disabled={isLoading}
             >
               <Lock className="mr-2 h-5 w-5" />
@@ -204,7 +204,7 @@ export function HostControls({
 
   return (
     <div className="glass-card rounded-xl p-6 space-y-4">
-      <h3 className="text-xl font-bold text-academic-gold">Host Controls</h3>
+      <h3 className="text-xl font-bold text-biblical-gold">Host Controls</h3>
       <div className="space-y-3">
         {renderControls()}
       </div>
