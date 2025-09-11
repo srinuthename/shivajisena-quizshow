@@ -443,6 +443,7 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
       checkAnswerResult: null,
     }));
     
+    setIsPaused(false); // Reset pause state for new question
     setGamePhase("question");
   }, [gameState.currentQuestion, gameState.score, questions.length, targetScore, timerDuration]);
 
