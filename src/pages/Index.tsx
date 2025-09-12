@@ -6,27 +6,27 @@ import { Card, CardContent } from "@/components/ui/card";
 const translations = {
   en: {
     headerTitle: "ShivajiSena Quiz Show",
-    headerSubtitle: "Chipurupalli's Premier Quiz Competition",
+    headerSubtitle: "YouTube's Premier Quiz Competition",
     adminPanel: "Admin Panel",
     announcement: "📢 ANNOUNCEMENT",
     welcomeTitle: "Welcome to ShivajiSena Quiz Show",
     welcomeDescription:
-      "Join Chipurupalli's most exciting quiz competition! Test your knowledge across various topics and compete for amazing prizes. Whether you're a student, professional, or quiz enthusiast, this is your chance to shine.",
+      "Join YouTube's most exciting quiz competition! Test your knowledge across various topics and compete for amazing prizes. Whether you're a student, professional, or quiz enthusiast, this is your chance to shine.",
     startQuiz: "🎮 Start Quiz Game",
     competitionFormat: "🏆 Competition Format",
     prizesAndRewards: "🎁 Prizes & Rewards",
     aboutTitle: "About ShivajiSena",
     aboutDescription:
-      "ShivajiSena is Chipurupalli's trusted organization promoting local culture, events, and community activities. Our Quiz Show competition aims to promote education, healthy competition, and community engagement while celebrating the intellectual talent in our region.",
+      "ShivajiSena is YouTube's trusted organization promoting local culture, events, and community activities. Our Quiz Show competition aims to promote education, healthy competition, and community engagement while celebrating the intellectual talent in our region.",
     sponsorsTitle: "🤝 Our Sponsors",
     interestedInSponsoring: "Interested in sponsoring?",
     contactUs: "Contact Us",
-    footerText: "© 2024 ShivajiSena Chipurupalli. All rights reserved.",
+    footerText: "© 2024 ShivajiSena YouTube. All rights reserved.",
     poweredBy: "Powered by ShivajiSena | Quiz Competition Platform",
   },
   te: {
     headerTitle: "శివాజీసేన క్విజ్ షో",
-    headerSubtitle: "చిపురుపల్లి ప్రీమియర్ క్విజ్ పోటీ",
+    headerSubtitle: "యూట్యూబ్ ప్రీమియర్ క్విజ్ పోటీ",
     adminPanel: "అడ్మిన్ ప్యానెల్",
     announcement: "📢 ప్రకటన",
     welcomeTitle: "శివాజీసేన క్విజ్ షోకు స్వాగతం",

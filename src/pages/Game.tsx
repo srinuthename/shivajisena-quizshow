@@ -19,6 +19,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { Button } from "@/components/ui/button";
 import { GAME_CONSTANTS } from "@/constants/game";
+import { LanguageToggle } from "@/components/LanguageToggle";
 import { X, Gift, Home, PenTool, Award, CheckCircle, Crown, Trophy } from "lucide-react";
 import {
   AlertDialog,
@@ -561,6 +562,7 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-background flex flex-col">
+      <LanguageToggle />
       {/* Final Winner Message */}
       {gamePhase === "final-animation" && (
         <FinalWinnerMessage onComplete={() => setGamePhase("winner")} />

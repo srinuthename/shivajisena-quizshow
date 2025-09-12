@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/hooks/useLanguage";
 import {
   Lock,
   Users,
@@ -44,6 +45,7 @@ export function HostControls({
   allowAnswerReview = true,
   isLastQuestion = false,
 }: HostControlsProps) {
+  const { t } = useLanguage();
 
   const renderControls = () => {
     switch (phase) {
@@ -55,7 +57,7 @@ export function HostControls({
             className="w-full h-16 gradient-primary text-primary-foreground hover:glow-primary"
           >
             <Play className="mr-2 h-5 w-5" />
-            Start Game
+            {t('Start Game')}
           </Button>
         );
 
@@ -69,7 +71,7 @@ export function HostControls({
               disabled={isLoading}
             >
               <Lock className="mr-2 h-5 w-5" />
-              Lock Answer
+              {t('Lock Answer')}
             </Button>
 
             {/* Pause/Resume Button */}
@@ -81,12 +83,12 @@ export function HostControls({
               {isPaused ? (
                 <>
                   <Play className="mr-2 h-5 w-5" />
-                  Resume Timer
+                  {t('Resume Timer')}
                 </>
               ) : (
                 <>
                   <RefreshCw className="mr-2 h-5 w-5" />
-                  Pause Timer
+                  {t('Pause Timer')}
                 </>
               )}
             </Button>
@@ -108,7 +110,7 @@ export function HostControls({
               ) : (
                 <>
                   <Users className="mr-2 h-5 w-5" />
-                  Fetch Viewer Votes
+                  {t('Fetch Viewer Votes')}
                 </>
               )}
             </Button>
@@ -123,7 +125,7 @@ export function HostControls({
                 className="w-full h-16 border-2 border-secondary hover:bg-secondary/20 hover:glow-secondary"
               >
                 <RefreshCw className="mr-2 h-5 w-5" />
-                Allow Answer Change
+                {t('Allow Answer Change')}
               </Button>
               <Button
                 onClick={onRevealAnswer}
@@ -131,7 +133,7 @@ export function HostControls({
                 className="w-full h-16 border-2 border-accent hover:bg-accent/20 hover:glow-accent"
               >
                 <Eye className="mr-2 h-5 w-5" />
-                Reveal Answer
+                {t('Reveal Answer')}
               </Button>
             </div>
           );
@@ -143,7 +145,7 @@ export function HostControls({
               className="w-full h-16 border-2 border-accent hover:bg-accent/20 hover:glow-accent"
             >
               <Eye className="mr-2 h-5 w-5" />
-              Reveal Answer
+              {t('Reveal Answer')}
             </Button>
           );
         }
@@ -157,7 +159,7 @@ export function HostControls({
               className="w-full h-16 border-2 border-secondary hover:bg-secondary/20 hover:glow-secondary"
             >
               <RefreshCw className="mr-2 h-5 w-5" />
-              Allow Answer Change
+              {t('Allow Answer Change')}
             </Button>
           );
         } else {
@@ -168,7 +170,7 @@ export function HostControls({
               className="w-full h-16 border-2 border-accent hover:bg-accent/20 hover:glow-accent"
             >
               <Eye className="mr-2 h-5 w-5" />
-              Reveal Answer
+              {t('Reveal Answer')}
             </Button>
           );
         }
@@ -181,7 +183,7 @@ export function HostControls({
             className="w-full h-16 border-2 border-accent hover:bg-accent/20 hover:glow-accent"
           >
             <Eye className="mr-2 h-5 w-5" />
-            Reveal Answer
+            {t('Reveal Answer')}
           </Button>
         );
 
@@ -193,7 +195,7 @@ export function HostControls({
             className="w-full h-16 gradient-secondary text-primary-foreground hover:glow-secondary"
           >
             <ChevronRight className="mr-2 h-5 w-5" />
-            {isLastQuestion ? 'Display Results' : 'Next Question'}
+            {isLastQuestion ? t('Display Results') : t('Next Question')}
           </Button>
         );
 
@@ -204,12 +206,12 @@ export function HostControls({
 
   return (
     <div className="glass-card rounded-xl p-6 space-y-4">
-      <h3 className="text-xl font-bold text-biblical-gold">Host Controls</h3>
+      <h3 className="text-xl font-bold text-biblical-gold">{t('Host Controls')}</h3>
       <div className="space-y-3">
         {renderControls()}
       </div>
       <div className="mt-4 p-3 bg-muted/30 rounded-lg">
-        <p className="text-sm text-muted-foreground">Current Phase:</p>
+        <p className="text-sm text-muted-foreground">{t('Current Phase:')}</p>
         <p className="text-sm font-medium capitalize">{phase.replace("-", " ")}</p>
       </div>
     </div>

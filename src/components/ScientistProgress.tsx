@@ -1,5 +1,7 @@
+import { CheckCircle, Crown, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Award } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface ScientistProgressProps {
   score: number;
@@ -24,13 +26,14 @@ const biblicalCharacters = [
 ];
 
 export function ScientistProgress({
-  score, 
-  targetScore, 
-  answeredQuestions, 
+  score,
+  targetScore,
+  answeredQuestions,
   currentQuestion,
   readyForFinalAnimation,
-  onTriggerFinalAnimation 
+  onTriggerFinalAnimation
 }: ScientistProgressProps) {
+  const { t } = useLanguage();
   const allCorrect = answeredQuestions.filter(Boolean).length === 10;
   const showFinalButton = allCorrect && readyForFinalAnimation;
 
@@ -78,12 +81,11 @@ export function ScientistProgress({
                   <Award className="h-3 w-3 text-biblical-crown animate-flicker" />
                 </div>
               )}
-              <span className={cn(
-                "text-[10px] mt-0.5 text-center",
-                isUnlocked ? "text-biblical-text font-semibold" : "text-biblical-muted"
-              )}>
-                {character.name}
-              </span>
+              <div className="text-center mt-2">
+                <p className="text-xs font-medium text-biblical-gold">
+                  {t(character.name)}
+                </p>
+              </div>
               {/* Question number indicator */}
               <span className={cn(
                 "text-[8px]",
