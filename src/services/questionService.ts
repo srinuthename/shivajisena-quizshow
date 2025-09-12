@@ -73,7 +73,7 @@ export const questionService = {
         timerDuration: this.getTimerDurationLocal(),
         targetScore: this.getTargetScoreLocal(),
         pointsPerQuestion: this.getPointsPerQuestionLocal(),
-        quizTitle: 'SPP News Quiz Vijetha',
+        quizTitle: 'ShivajiSena Quiz Show',
         useApiScoring: false,
         allowNegativeMarks: true,
         negativePointsPerQuestion: GAME_CONSTANTS.DEFAULT_INCORRECT_NEGATIVE_POINTS,

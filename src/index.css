@@ -28,11 +28,11 @@ All colors MUST be HSL.
     --popover: 25 40% 12%;
     --popover-foreground: 45 25% 92%;
 
-    --primary: 45 85% 55%; /* Divine Gold */
-    --primary-foreground: 25 50% 15%;
+    --primary: 45 100% 50%; /* Bright Yellow */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 260 45% 35%; /* Royal Purple */
-    --secondary-foreground: 45 25% 92%;
+    --secondary: 0 84% 60%; /* Bright Red */
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 25 25% 18%;
     --muted-foreground: 45 15% 65%;

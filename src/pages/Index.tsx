@@ -5,44 +5,44 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const translations = {
   en: {
-    headerTitle: "SPP News Quiz Vijetha",
+    headerTitle: "ShivajiSena Quiz Show",
     headerSubtitle: "Chipurupalli's Premier Quiz Competition",
     adminPanel: "Admin Panel",
     announcement: "📢 ANNOUNCEMENT",
-    welcomeTitle: "Welcome to SPP News Quiz Vijetha",
+    welcomeTitle: "Welcome to ShivajiSena Quiz Show",
     welcomeDescription:
       "Join Chipurupalli's most exciting quiz competition! Test your knowledge across various topics and compete for amazing prizes. Whether you're a student, professional, or quiz enthusiast, this is your chance to shine.",
     startQuiz: "🎮 Start Quiz Game",
     competitionFormat: "🏆 Competition Format",
     prizesAndRewards: "🎁 Prizes & Rewards",
-    aboutTitle: "About SPP News",
+    aboutTitle: "About ShivajiSena",
     aboutDescription:
-      "SPP News is Chipurupalli's trusted source for local news, events, and community activities. Our Quiz Vijetha competition aims to promote education, healthy competition, and community engagement while celebrating the intellectual talent in our region.",
+      "ShivajiSena is Chipurupalli's trusted organization promoting local culture, events, and community activities. Our Quiz Show competition aims to promote education, healthy competition, and community engagement while celebrating the intellectual talent in our region.",
     sponsorsTitle: "🤝 Our Sponsors",
     interestedInSponsoring: "Interested in sponsoring?",
     contactUs: "Contact Us",
-    footerText: "© 2024 SPP News Chipurupalli. All rights reserved.",
-    poweredBy: "Powered by SPP News | Quiz Competition Platform",
+    footerText: "© 2024 ShivajiSena Chipurupalli. All rights reserved.",
+    poweredBy: "Powered by ShivajiSena | Quiz Competition Platform",
   },
   te: {
-    headerTitle: "ఎస్పీపీ న్యూస్ క్విజ్ విజేత",
+    headerTitle: "శివాజీసేన క్విజ్ షో",
     headerSubtitle: "చిపురుపల్లి ప్రీమియర్ క్విజ్ పోటీ",
     adminPanel: "అడ్మిన్ ప్యానెల్",
     announcement: "📢 ప్రకటన",
-    welcomeTitle: "ఎస్పీపీ న్యూస్ క్విజ్ విజేతకు స్వాగతం",
+    welcomeTitle: "శివాజీసేన క్విజ్ షోకు స్వాగతం",
     welcomeDescription:
       "చిపురుపల్లి యొక్క అత్యంత ఉత్తేజకరమైన క్విజ్ పోటీలో పాల్గొనండి! వివిధ అంశాలపై మీ జ్ఞానాన్ని పరీక్షించండి మరియు అద్భుతమైన బహుమతుల కోసం పోటీపడండి. మీరు విద్యార్థి, ప్రొఫెషనల్ లేదా క్విజ్ అభిమాని అయినా, ఇది మీకు ప్రకాశించడానికి అవకాశం.",
     startQuiz: "🎮 క్విజ్ గేమ్ ప్రారంభించు",
     competitionFormat: "🏆 పోటీ ఫార్మాట్",
     prizesAndRewards: "🎁 బహుమతులు & రివార్డులు",
-    aboutTitle: "ఎస్పీపీ న్యూస్ గురించి",
+    aboutTitle: "శివాజీసేన గురించి",
     aboutDescription:
-      "ఎస్పీపీ న్యూస్ చిపురుపల్లి యొక్క స్థానిక వార్తలు, ఈవెంట్లు మరియు సమాజ కార్యకలాపాలకు విశ్వసనీయ వనరు. మా క్విజ్ విజేత పోటీ విద్య, ఆరోగ్యకరమైన పోటీ మరియు సమాజం నియోజకవర్గం యొక్క బౌధిక ప్రతిభను జ్ఞాపకం చేసుకోవడంతో పాటు సమాజం నియోజకవర్గం యొక్క బౌధిక ప్రతిభను ప్రోత్సహించడం లక్ష్యంగా పెట్టుకుంది.",
+      "శివాజీసేన చిపురుపల్లి యొక్క స్థానిక సంస్కృతి, ఈవెంట్లు మరియు సమాజ కార్యకలాపాలను ప్రోత్సహించే విశ్వసనీయ సంస్థ. మా క్విజ్ షో పోటీ విద్య, ఆరోగ్యకరమైన పోటీ మరియు సమాజం యొక్క బౌధిక ప్రతిభను ప్రోత్సహించడం లక్ష్యంగా పెట్టుకుంది.",
     sponsorsTitle: "🤝 మా స్పాన్సర్లు",
     interestedInSponsoring: "స్పాన్సర్ చేయడంలో ఆసక్తి ఉంది?",
     contactUs: "మమ్మల్ని సంప్రదించండి",
-    footerText: "© 2024 ఎస్పీపీ న్యూస్ చిపురుపల్లి. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
-    poweredBy: "ఎస్పీపీ న్యూస్ ద్వారా నడుస్తోంది | క్విజ్ పోటీ ప్లాట్‌ఫారమ్",
+    footerText: "© 2024 శివాజీసేన చిపురుపల్లి. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.",
+    poweredBy: "శివాజీసేన ద్వారా నడుస్తోంది | క్విజ్ పోటీ ప్లాట్‌ఫారమ్",
   },
 };
 
@@ -56,8 +56,8 @@ export default function Home() {
   const t = translations[language];
 
   const sponsors = [
-    { name: "SPP News", logo: "/lovable-uploads/b3b491c3-efc2-4f05-91c0-ec3d080b42e9.png" },
-    { name: "SPP News", logo: "/lovable-uploads/b3b491c3-efc2-4f05-91c0-ec3d080b42e9.png" },
+    { name: "ShivajiSena", logo: "/lovable-uploads/51d5ca39-3de5-4ca3-b467-8de1a7331592.png" },
+    { name: "ShivajiSena", logo: "/lovable-uploads/51d5ca39-3de5-4ca3-b467-8de1a7331592.png" },
   ];
 
   return (
@@ -67,8 +67,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
             <img
-              src="/lovable-uploads/b3b491c3-efc2-4f05-91c0-ec3d080b42e9.png"
-              alt="SPP News Logo"
+              src="/lovable-uploads/51d5ca39-3de5-4ca3-b467-8de1a7331592.png"
+              alt="ShivajiSena Logo"
               className="h-20 w-auto rounded-sm"
             />
             <div>

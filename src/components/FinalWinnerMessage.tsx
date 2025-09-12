@@ -51,7 +51,7 @@ export function FinalWinnerMessage({ onComplete }: FinalWinnerMessageProps) {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-biblical-gold via-secondary to-accent bg-clip-text text-transparent"
         >
-          SPP News Quiz Vijetha!
+          ShivajiSena Quiz Show!
         </motion.h1>
 
         <motion.p

@@ -79,7 +79,7 @@ const [showPrizeStructure, setShowPrizeStructure] = useState(false);
 
   const [fetchViewerVotes, setFetchViewerVotes] = useState(false);
   const [allowAnswerReview, setAllowAnswerReview] = useState(true);
-  const [quizTitle, setQuizTitle] = useState('SPP News Quiz Vijetha');
+  const [quizTitle, setQuizTitle] = useState('ShivajiSena Quiz Show');
   const [showWinnerModal, setShowWinnerModal] = useState(false);
   const [showPrizeModal, setShowPrizeModal] = useState(false);
 const prizeTable = [
@@ -124,7 +124,7 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
         setGameShowMode(settings.gameShowMode || "Solo");
         setFetchViewerVotes(settings.fetchViewerVotes || false);
         setAllowAnswerReview(settings.allowAnswerReview !== undefined ? settings.allowAnswerReview : true);
-        setQuizTitle(settings.quizTitle || 'SPP News Quiz Vijetha');
+        setQuizTitle(settings.quizTitle || 'ShivajiSena Quiz Show');
 
         // Check for existing game state or start new game
         const savedState = questionService.getGameState();

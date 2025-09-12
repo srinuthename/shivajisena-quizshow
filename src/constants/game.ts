@@ -29,5 +29,5 @@ export const GAME_CONSTANTS = {
   },
   
   // Achievement milestones
-  ACHIEVEMENT_NAME: 'SPP News Quiz Vijetha',
+  ACHIEVEMENT_NAME: 'ShivajiSena Quiz Show',
 } as const;

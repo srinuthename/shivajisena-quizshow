@@ -39,7 +39,7 @@ export default function Admin() {
   const [viewerVotesApiKey, setViewerVotesApiKey] = useState("");
   const [allowAnswerReview, setAllowAnswerReview] = useState(true);
   const [gameShowMode, setGameShowMode] = useState("Solo");
-  const [quizTitle, setQuizTitle] = useState('SPP News Quiz Vijetha');
+  const [quizTitle, setQuizTitle] = useState('ShivajiSena Quiz Show');
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
 
@@ -66,7 +66,7 @@ export default function Admin() {
         setViewerVotesApiKey(settings.viewerVotesApiKey || "");
         setAllowAnswerReview(settings.allowAnswerReview);
         setGameShowMode(settings.gameShowMode || "Solo");
-        setQuizTitle(settings.quizTitle || 'SPP News Quiz Vijetha');
+        setQuizTitle(settings.quizTitle || 'ShivajiSena Quiz Show');
       } catch (error) {
         console.error("Failed to load settings:", error);
         toast.toast({
@@ -256,7 +256,7 @@ export default function Admin() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-            SPP News Quiz Vijetha - Admin Panel
+            ShivajiSena Quiz Show - Admin Panel
           </h1>
           <p className="text-muted-foreground">
             Manage questions and game settings for the quiz competition
