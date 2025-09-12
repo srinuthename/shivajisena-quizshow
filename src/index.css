@@ -18,77 +18,77 @@ All colors MUST be HSL.
 */
 
   :root {
-    /* Elegant Game Show Theme Colors */
-    --background: 189 100% 4%;
-    --foreground: 0 0% 98%;
+    /* Ancient Biblical Theme Colors */
+    --background: 25 35% 8%;
+    --foreground: 45 25% 92%;
 
-    --card: 189 80% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 25 40% 12%;
+    --card-foreground: 45 25% 92%;
 
-    --popover: 189 80% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 25 40% 12%;
+    --popover-foreground: 45 25% 92%;
 
-    --primary: 189 85% 45%; /* Teal Blue Primary */
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 85% 55%; /* Divine Gold */
+    --primary-foreground: 25 50% 15%;
 
-    --secondary: 320 100% 70%; /* Vibrant Pink */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 260 45% 35%; /* Royal Purple */
+    --secondary-foreground: 45 25% 92%;
 
-    --muted: 189 40% 15%;
-    --muted-foreground: 189 30% 70%;
+    --muted: 25 25% 18%;
+    --muted-foreground: 45 15% 65%;
 
-    --accent: 25 95% 60%; /* Vibrant Orange */
-    --accent-foreground: 0 0% 100%;
+    --accent: 15 75% 50%; /* Sacred Crimson */
+    --accent-foreground: 45 25% 92%;
 
-    --destructive: 0 84% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 45 25% 92%;
 
-    --border: 189 50% 20%;
-    --input: 189 50% 18%;
-    --ring: 189 85% 45%;
+    --border: 25 30% 22%;
+    --input: 25 35% 20%;
+    --ring: 45 85% 55%;
 
     --radius: 1rem;
 
-    /* Elegant Game Show Variables */
-    --gradient-primary: linear-gradient(135deg, hsl(189 85% 45%), hsl(189 85% 65%), hsl(175 70% 50%));
-    --gradient-secondary: linear-gradient(135deg, hsl(320 100% 70%), hsl(340 95% 65%));
-    --gradient-accent: linear-gradient(135deg, hsl(25 95% 60%), hsl(45 100% 55%));
-    --gradient-background: linear-gradient(180deg, hsl(189 100% 4%), hsl(189 80% 8%), hsl(189 60% 12%));
-    --gradient-success: linear-gradient(135deg, hsl(120 60% 50%), hsl(140 70% 45%));
-    --gradient-achievement: linear-gradient(135deg, hsl(45 100% 50%), hsl(55 100% 60%));
-    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    /* Ancient Biblical Variables */
+    --gradient-primary: linear-gradient(135deg, hsl(45 85% 55%), hsl(35 80% 60%), hsl(50 75% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(260 45% 35%), hsl(280 50% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(15 75% 50%), hsl(25 70% 55%));
+    --gradient-background: linear-gradient(180deg, hsl(25 35% 8%), hsl(30 30% 12%), hsl(35 25% 16%));
+    --gradient-success: linear-gradient(135deg, hsl(120 45% 40%), hsl(140 50% 45%));
+    --gradient-achievement: linear-gradient(135deg, hsl(45 85% 55%), hsl(35 90% 65%));
+    --gradient-glass: linear-gradient(135deg, rgba(218,165,32,0.15), rgba(184,134,11,0.08));
     
-    --glow-primary: 0 0 60px hsl(189 85% 45% / 0.6);
-    --glow-secondary: 0 0 60px hsl(320 100% 70% / 0.5);
-    --glow-accent: 0 0 60px hsl(25 95% 60% / 0.5);
-    --glow-success: 0 0 60px hsl(120 60% 50% / 0.6);
+    --glow-primary: 0 0 60px hsl(45 85% 55% / 0.7);
+    --glow-secondary: 0 0 60px hsl(260 45% 35% / 0.6);
+    --glow-accent: 0 0 60px hsl(15 75% 50% / 0.6);
+    --glow-success: 0 0 60px hsl(120 45% 40% / 0.6);
     
-    --shadow-card: 0 20px 60px -15px hsl(189 85% 45% / 0.3);
-    --shadow-hover: 0 30px 80px -20px hsl(189 85% 45% / 0.4);
-    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --shadow-card: 0 20px 60px -15px hsl(45 85% 55% / 0.4);
+    --shadow-hover: 0 30px 80px -20px hsl(45 85% 55% / 0.5);
+    --shadow-glass: 0 8px 32px 0 rgba(139, 69, 19, 0.37);
     
-    --timer-danger: 0 84% 50%;
-    --timer-warning: 45 100% 50%;
-    --timer-safe: 120 70% 50%;
+    --timer-danger: 0 75% 45%;
+    --timer-warning: 45 85% 55%;
+    --timer-safe: 120 45% 40%;
     
     
     /* Biblical Theme Colors */
-    --biblical-gold: 45 100% 50%;
-    --biblical-crown: 40 95% 55%;
-    --biblical-primary: 189 85% 45%;
-    --biblical-secondary: 320 100% 70%;
-    --biblical-dark: 30 20% 15%;
-    --biblical-text: 45 30% 85%;
-    --biblical-muted: 30 25% 50%;
+    --biblical-gold: 45 85% 55%;
+    --biblical-crown: 35 80% 60%;
+    --biblical-primary: 45 85% 55%;
+    --biblical-secondary: 260 45% 35%;
+    --biblical-dark: 25 50% 15%;
+    --biblical-text: 45 25% 85%;
+    --biblical-muted: 25 20% 50%;
 
-    --sidebar-background: 250 35% 12%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 280 85% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 250 30% 18%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 250 30% 20%;
-    --sidebar-ring: 280 85% 60%;
+    --sidebar-background: 25 35% 12%;
+    --sidebar-foreground: 45 25% 92%;
+    --sidebar-primary: 260 45% 35%;
+    --sidebar-primary-foreground: 45 25% 92%;
+    --sidebar-accent: 25 30% 18%;
+    --sidebar-accent-foreground: 45 25% 92%;
+    --sidebar-border: 25 30% 22%;
+    --sidebar-ring: 45 85% 55%;
   }
 
   .dark {
@@ -182,11 +182,11 @@ All colors MUST be HSL.
 @keyframes biblical-glow {
   0%, 100% {
     transform: scale(1);
-    filter: brightness(1) drop-shadow(0 0 20px hsl(45 100% 50% / 0.7));
+    filter: brightness(1) drop-shadow(0 0 20px hsl(45 85% 55% / 0.7));
   }
   50% {
     transform: scale(1.1);
-    filter: brightness(1.5) drop-shadow(0 0 40px hsl(45 100% 50% / 1));
+    filter: brightness(1.5) drop-shadow(0 0 40px hsl(45 85% 55% / 1));
   }
 }
 
@@ -245,7 +245,7 @@ All colors MUST be HSL.
 /* Utility Classes */
 .glass-card {
   @apply backdrop-blur-xl bg-card/60 border border-border/30;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  background: var(--gradient-glass);
   box-shadow: var(--shadow-glass);
   backdrop-filter: blur(20px);
 }
@@ -257,7 +257,7 @@ All colors MUST be HSL.
     hsl(var(--secondary) / 0.1), 
     hsl(var(--accent) / 0.1)
   );
-  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(218,165,32,0.1);
 }
 
 .shadow-biblical {
