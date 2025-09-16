@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { questionService } from "@/services/questionService";
 import { settingsService } from "@/services/settingsService";
-import { apiService } from "@/services/apiService";
+import { localStorageService } from "@/services/localStorageService";
 import { GameState, GamePhase, ViewerVote, Question } from "@/types/game";
 import { updateScore } from "@/lib/api";
 import { QuestionCard } from "@/components/QuestionCard";
@@ -99,19 +99,20 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
 }
 
   useEffect(() => {
-    const loadData = async () => {
+    const loadData = () => {
       try {
         console.log("🚀 [GAME] Initializing game");
         setIsLoading(true);
-        const settings = await settingsService.getSettings();
+        const questionsData = questionService.getQuestions();
+        const settings = questionService.getSettings();
         console.log("📚 [DATA] Settings loaded:", {
-          questionsCount: (settings.questions || []).length,
+          questionsCount: questionsData.length,
           timerDuration: settings.timerDuration,
           targetScore: settings.targetScore,
           pointsPerQuestion: settings.pointsPerQuestion,
         });
 
-        setQuestions(settings.questions || []);
+        setQuestions(questionsData);
         setQuestionCount(settings.questionCount || 10);
         setTimerDuration(settings.timerDuration || GAME_CONSTANTS.DEFAULT_TIMER_DURATION);
         setTargetScore(settings.targetScore || GAME_CONSTANTS.DEFAULT_TARGET_SCORE);
@@ -137,7 +138,7 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
           }
         } else {
           // Start a new game automatically
-          await startNewGame(settings.questions || []);
+          startNewGame(questionsData);
         }
       } catch (error) {
         console.error("❌ [ERROR] Failed to load game data:", error);
@@ -154,64 +155,32 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
   }, []);
 
   const startNewGame = async (questionsToUse: Question[]) => {
-    try {
-      console.log("🎮 [ACTION] Starting new game");
-      const game = await apiService.createGame(questionsToUse);
-      console.log("🔄 [API] Game created in backend:", { gameId: game.id });
+    console.log("🎮 [ACTION] Starting new game");
 
-      const newGameState: GameState = {
-        gameId: game.id,
-        currentQuestion: 0,
-        score: 0,
-        guestAnswer: null,
-        finalAnswer: null,
-        viewerVotes: [],
-        isRevealed: false,
-        hasChangedAnswer: false,
-        timeRemaining: 30,
-        answeredQuestions: new Array(questionsToUse.length).fill(false),
-        skippedQuestions: new Array(questionsToUse.length).fill(false),
-        allQuestionsCompleted: false,
-        lifelines: {
-          checkAnswer: true,
-          fiftyFifty: true,
-        },
-        eliminatedOptions: undefined,
-        checkAnswerResult: null,
-        lifelinesUsedCurrentQuestion: 0,
-      };
+    const newGameState: GameState = {
+      currentQuestion: 0,
+      score: 0,
+      guestAnswer: null,
+      finalAnswer: null,
+      viewerVotes: [],
+      isRevealed: false,
+      hasChangedAnswer: false,
+      timeRemaining: 30,
+      answeredQuestions: new Array(questionsToUse.length).fill(false),
+      skippedQuestions: new Array(questionsToUse.length).fill(false),
+      allQuestionsCompleted: false,
+      lifelines: {
+        checkAnswer: true,
+        fiftyFifty: true,
+      },
+      eliminatedOptions: undefined,
+      checkAnswerResult: null,
+      lifelinesUsedCurrentQuestion: 0,
+    };
 
-      setGameState(newGameState);
-      setGamePhase("question");
-      questionService.clearGameState();
-    } catch (error) {
-      console.error("❌ [ERROR] Failed to start game:", error);
-      
-      const fallbackGameState: GameState = {
-        currentQuestion: 0,
-        score: 0,
-        guestAnswer: null,
-        finalAnswer: null,
-        viewerVotes: [],
-        isRevealed: false,
-        hasChangedAnswer: false,
-        timeRemaining: 30,
-        answeredQuestions: new Array(questionsToUse.length).fill(false),
-        skippedQuestions: new Array(questionsToUse.length).fill(false),
-        allQuestionsCompleted: false,
-        lifelines: {
-          checkAnswer: true,
-          fiftyFifty: true,
-        },
-        eliminatedOptions: undefined,
-        checkAnswerResult: null,
-        lifelinesUsedCurrentQuestion: 0,
-      };
-
-      setGameState(fallbackGameState);
-      setGamePhase("question");
-      questionService.clearGameState();
-    }
+    setGameState(newGameState);
+    setGamePhase("question");
+    questionService.clearGameState();
   };
 
   // Save game state whenever it changes
@@ -298,13 +267,13 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
   }, [gameState.guestAnswer, toast]);
 
   // Fetch viewer votes
-  const handleFetchVotes = useCallback(async () => {
+  const handleFetchVotes = useCallback(() => {
     if (!currentQuestion) return;
 
-    console.log("👥 [ACTION] Fetching viewer votes");
+    console.log("👥 [ACTION] Generating mock viewer votes");
     setIsLoadingVotes(true);
     try {
-      const votes = await apiService.fetchViewerVotes(currentQuestion.id, currentQuestion.options.length);
+      const votes = localStorageService.generateMockViewerVotes(currentQuestion.id, currentQuestion.options.length);
       const totalVotes = votes.length;
       const optionCounts = currentQuestion.options.map((_, idx) =>
         votes.filter(v => v.choice === idx).length
@@ -321,14 +290,14 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
       setGamePhase("viewer-votes");
 
       toast({
-        title: "Viewer Votes Received!",
-        description: "The audience has spoken. Guest can now change their answer.",
+        title: "Viewer Votes Generated!",
+        description: "Mock audience votes generated. Guest can now change their answer.",
       });
     } catch (error) {
-      console.error("❌ [ERROR] Failed to fetch viewer votes:", error);
+      console.error("❌ [ERROR] Failed to generate viewer votes:", error);
       toast({
         title: "Error",
-        description: "Failed to fetch viewer votes.",
+        description: "Failed to generate viewer votes.",
         variant: "destructive",
       });
     } finally {
@@ -345,21 +314,8 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
     });
   }, [toast]);
 
-  const calculateScoreFromAPI = useCallback(async (guestChoice: number | null, correctAnswer: number, viewerVotes: ViewerVote[]) => {
+  const calculateScore = useCallback((guestChoice: number | null, correctAnswer: number, viewerVotes: ViewerVote[]) => {
     const isCorrect = guestChoice === correctAnswer;
-
-    if (useApiScoring) {
-      try {
-        const viewerCorrect = viewerVotes.filter(v => v.choice === correctAnswer).length;
-        const viewerIncorrect = viewerVotes.filter(v => v.choice !== correctAnswer).length;
-
-        // For now, just return the calculated score since the API doesn't support complex scoring
-        console.log("API scoring not fully implemented, using local calculation");
-        return pointsPerQuestion;
-      } catch (error) {
-        console.error("Failed to calculate score via API:", error);
-      }
-    }
 
     if (isCorrect) {
       return pointsPerQuestion;
@@ -368,10 +324,10 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
     } else {
       return allowNegativeMarks ? -negativePointsPerQuestion : 0;
     }
-  }, [useApiScoring, gameState.gameId, currentQuestion, pointsPerQuestion, allowNegativeMarks, skipPenaltyPointsPerQuestion, negativePointsPerQuestion]);
+  }, [pointsPerQuestion, allowNegativeMarks, skipPenaltyPointsPerQuestion, negativePointsPerQuestion]);
 
   // Reveal answer
-  const handleRevealAnswer = useCallback(async () => {
+  const handleRevealAnswer = useCallback(() => {
     if (!currentQuestion) return;
 
     console.log("🔍 [ACTION] Revealing answer");
@@ -379,7 +335,7 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
     const finalChoice = gameState.finalAnswer !== null ? gameState.finalAnswer : gameState.guestAnswer;
     const isCorrect = finalChoice === currentQuestion.correctAnswer;
     
-    let scoreChange = await calculateScoreFromAPI(finalChoice, currentQuestion.correctAnswer, gameState.viewerVotes);
+    let scoreChange = calculateScore(finalChoice, currentQuestion.correctAnswer, gameState.viewerVotes);
     
     if (gameState.lifelinesUsedCurrentQuestion > 0) {
       const lifelinePenalty = gameState.lifelinesUsedCurrentQuestion * lifelinePenaltyPointsPerLifeline;
@@ -416,7 +372,7 @@ if (gameState.score >= GAME_CONSTANTS.DEFAULT_TARGET_SCORE) {
       description,
       variant: isCorrect ? "default" : "destructive",
     });
-  }, [currentQuestion, gameState, calculateScoreFromAPI, lifelinePenaltyPointsPerLifeline, toast]);
+  }, [currentQuestion, gameState, calculateScore, lifelinePenaltyPointsPerLifeline, toast]);
 
   // Next question
   const handleNextQuestion = useCallback(() => {
