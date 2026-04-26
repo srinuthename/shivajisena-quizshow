@@ -29,6 +29,10 @@ export interface SavedQuizRunConfig {
   };
 }
 
+type SavedQuizRunConfigPatch = Omit<Partial<SavedQuizRunConfig>, 'runtime'> & {
+  runtime?: Partial<SavedQuizRunConfig['runtime']>;
+};
+
 const getQuizRunConfigKey = (frontendQuizGameId: string): string =>
   `${QUIZ_RUN_CONFIG_PREFIX}${String(frontendQuizGameId || '').trim()}`;
 
@@ -78,9 +82,7 @@ export const saveQuizRunConfig = (config: SavedQuizRunConfig): void => {
 
 export const updateQuizRunConfig = (
   frontendQuizGameId: string | null | undefined,
-  updates: Partial<SavedQuizRunConfig> & {
-    runtime?: Partial<SavedQuizRunConfig['runtime']>;
-  }
+  updates: SavedQuizRunConfigPatch
 ): SavedQuizRunConfig | null => {
   const current = readQuizRunConfigSync(frontendQuizGameId);
   if (!current) return null;
