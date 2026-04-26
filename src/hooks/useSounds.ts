@@ -1,9 +1,9 @@
 import { useCallback, useState, useEffect, useRef } from 'react';
+import { readMirroredAdminSettingSync, writeMirroredAdminSetting } from '@/lib/adminConfigPersistence';
 
 export const useSounds = () => {
   const [volume, setVolume] = useState(() => {
-    const saved = localStorage.getItem('soundVolume');
-    return saved ? parseFloat(saved) : 0.5;
+    return readMirroredAdminSettingSync<number>('soundVolume', 0.5);
   });
 
   // Background music state
@@ -14,7 +14,7 @@ export const useSounds = () => {
   const musicIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    localStorage.setItem('soundVolume', volume.toString());
+    void writeMirroredAdminSetting('soundVolume', volume);
     // Update music volume if playing
     if (musicNodesRef.current) {
       musicNodesRef.current.gains.forEach(gain => {

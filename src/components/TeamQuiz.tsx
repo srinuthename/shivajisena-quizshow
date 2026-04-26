@@ -78,7 +78,7 @@ import { buildQuizAuthStartUrl } from "@/lib/sharedAuth";
 import { readQuizHostChannel } from "@/lib/quizHostChannel";
 import { getStoredApplicationId, HOST_PRODUCT_KEY } from "@/config/hostProduct";
 import { readMirroredAdminSettingSync } from "@/lib/adminConfigPersistence";
-import { readActiveQuizRunConfigSync, updateQuizRunConfig } from "@/lib/quizRunConfig";
+import { clearQuizRunConfig, readActiveQuizRunConfigSync, updateQuizRunConfig } from "@/lib/quizRunConfig";
 import { readLatestQuizSessionConfigSnapshot } from "@/lib/adminConfigPersistence";
 
 const readAdminNumber = (key: string, fallback: number): number => Number(readMirroredAdminSettingSync<number>(key, fallback));
@@ -155,14 +155,15 @@ const TeamQuizInner = () => {
   const { branding, pageTitle, isLoading: brandingLoading } = useBranding();
 
   const getResolvedEpisodeMeta = () => {
+    const activeRunConfig = readActiveQuizRunConfigSync(frontendQuizGameId || streamFrontendQuizGameId || searchParams.get('gameId'));
     const quizShowName = String(
-      localStorage.getItem('quizShowName') || branding.showTitle || 'Quiz Show'
+      activeRunConfig?.quizShowName || branding.showTitle || 'Quiz Show'
     ).trim() || 'Quiz Show';
     const episodeNumber = String(
-      localStorage.getItem('episodeNumber') || branding.episodeNumber || '1'
+      activeRunConfig?.episodeNumber || branding.episodeNumber || '1'
     ).trim() || '1';
     const episodeName = String(
-      localStorage.getItem('episodeName') || `${quizShowName} Episode #${episodeNumber}`
+      activeRunConfig?.episodeName || `${quizShowName} Episode #${episodeNumber}`
     ).trim() || `${quizShowName} Episode #${episodeNumber}`;
     return { episodeName, episodeNumber, quizShowName };
   };
@@ -199,35 +200,26 @@ const TeamQuizInner = () => {
     const checkSession = async () => {
       let activeSession = getActiveSession();
 
-      // --- Refresh recovery: sessionStorage is wiped on reload, but
-      // latest quiz session config snapshot is in IndexedDB and survives. ---
+      // Refresh recovery: sessionStorage can be absent after reload, but
+      // active runtime config/session data is kept in localStorage until quiz end.
       if (!activeSession) {
         try {
-          const latestSnapshot = await readLatestQuizSessionConfigSnapshot();
-          if (latestSnapshot) {
-            const { sessionId, snapshot } = latestSnapshot;
-            const recoveredGameId = String(
-              (snapshot?.frontendQuizGameId as string | undefined) ||
-              frontendQuizGameId ||
-              searchParams.get('gameId') ||
-              ''
-            ).trim();
-            const recoveredEpisodeNumber = String(
-              (snapshot?.episodeNumber as string | undefined) ||
-              branding?.episodeNumber ||
-              ''
-            ).trim();
-            if (sessionId && recoveredGameId) {
-              activeSession = startActiveSession(sessionId, recoveredGameId, recoveredEpisodeNumber || '1');
-              activeSession = startActiveSession(sessionId, recoveredGameId, recoveredEpisodeNumber || '1', {
-                startedAt: Number((snapshot?.startedAt as number | undefined) || Date.now()),
-              });
-              console.log('[Quiz] Revived active session from localStorage after refresh:', sessionId);
-            }
+          const runConfig = readActiveQuizRunConfigSync(frontendQuizGameId || searchParams.get('gameId'));
+          const recoveredGameId = String(runConfig?.frontendQuizGameId || frontendQuizGameId || searchParams.get('gameId') || '').trim();
+          if (runConfig && recoveredGameId) {
+            activeSession = startActiveSession(
+              crypto.randomUUID(),
+              recoveredGameId,
+              runConfig.episodeNumber || branding?.episodeNumber || '1',
+              {
+                startedAt: Number(runConfig.runtime?.startedAtMs || Date.now()),
+                skipInitialBackendRestore: Boolean(runConfig.runtime?.skipInitialBackendRestore),
+              }
+            );
+            console.log('[Quiz] Revived active session from runtime storage after refresh:', recoveredGameId);
           }
-          const durableFrontendGameId = String(frontendQuizGameId || activeSession?.frontendGameId || searchParams.get('gameId') || '').trim();
         } catch {
-          // corrupt snapshot — fall through to redirect
+          // corrupt runtime storage — fall through to redirect
         }
       }
 
@@ -244,7 +236,7 @@ const TeamQuizInner = () => {
         console.log('[Quiz] Recovered active session from durable storage:', durableSessionId);
       }
 
-      // Restore runtime snapshot from IndexedDB if localStorage copy is missing.
+      // Restore runtime session questions from localStorage if in-memory data was lost.
       if (activeSession && !hasSessionData()) {
         await restoreSessionDataFromIndexedDb();
       }
@@ -315,7 +307,8 @@ const TeamQuizInner = () => {
       await createSessionQuestions(
         settings.questionsPerCategory,
         settings.maxUsedCount,
-        settings.shuffleEnabled
+        settings.shuffleEnabled,
+        settings.topicSettings || readAdminJson("topicSettings", {})
       );
       setSessionPools(getSessionPools());
       setSessionSubjects(getSessionSubjects());
@@ -1582,7 +1575,7 @@ const TeamQuizInner = () => {
           questionIndex: payload.questionIndex as number,
           correctChoiceIndex: correctIdx ? parseInt(correctIdx, 10) : -1,
           openedAt,
-          durationMs: parseInt(localStorage.getItem('timerDuration') || '90', 10) * 1000,
+          durationMs: timerDuration * 1000,
         });
       } else if (action === 'close') {
         const qIdx = payload.questionIndex ?? sessionStorage.getItem('currentQuestionIndex');
@@ -3208,6 +3201,7 @@ const TeamQuizInner = () => {
       clearQuizRuntimeContext();
       setApiFrontendQuizGameId(null);
       clearFinalLeaderboardSnapshot();
+      clearQuizRunConfig(frontendQuizGameId || streamFrontendQuizGameId || null);
       try {
         localStorage.removeItem('quizMirrorView');
         localStorage.removeItem('quizMirrorViewerState');

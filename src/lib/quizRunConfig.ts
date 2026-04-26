@@ -29,6 +29,10 @@ export interface SavedQuizRunConfig {
   };
 }
 
+type SavedQuizRunConfigPatch = Omit<Partial<SavedQuizRunConfig>, 'runtime'> & {
+  runtime?: Partial<SavedQuizRunConfig['runtime']>;
+};
+
 const getQuizRunConfigKey = (frontendQuizGameId: string): string =>
   `${QUIZ_RUN_CONFIG_PREFIX}${String(frontendQuizGameId || '').trim()}`;
 
@@ -78,9 +82,7 @@ export const saveQuizRunConfig = (config: SavedQuizRunConfig): void => {
 
 export const updateQuizRunConfig = (
   frontendQuizGameId: string | null | undefined,
-  updates: Partial<SavedQuizRunConfig> & {
-    runtime?: Partial<SavedQuizRunConfig['runtime']>;
-  }
+  updates: SavedQuizRunConfigPatch
 ): SavedQuizRunConfig | null => {
   const current = readQuizRunConfigSync(frontendQuizGameId);
   if (!current) return null;
@@ -113,8 +115,10 @@ export const setActiveQuizRunConfig = (frontendQuizGameId: string | null | undef
   try {
     if (runId) {
       sessionStorage.setItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY, runId);
+      localStorage.setItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY, runId);
     } else {
       sessionStorage.removeItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY);
+      localStorage.removeItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY);
     }
     window.dispatchEvent(new CustomEvent('quizActiveRunConfigChanged', { detail: runId || null }));
   } catch (error) {
@@ -124,7 +128,15 @@ export const setActiveQuizRunConfig = (frontendQuizGameId: string | null | undef
 
 export const readActiveQuizRunConfigIdSync = (): string | null => {
   try {
-    return String(sessionStorage.getItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY) || '').trim() || null;
+    const runId = String(
+      sessionStorage.getItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY)
+      || localStorage.getItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY)
+      || ''
+    ).trim();
+    if (runId && !sessionStorage.getItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY)) {
+      sessionStorage.setItem(ACTIVE_QUIZ_RUN_CONFIG_ID_KEY, runId);
+    }
+    return runId || null;
   } catch {
     return null;
   }
@@ -148,6 +160,19 @@ export const readActiveQuizRunSettingSync = (
 
 export const clearActiveQuizRunConfig = (): void => {
   setActiveQuizRunConfig(null);
+};
+
+export const clearQuizRunConfig = (frontendQuizGameId: string | null | undefined): void => {
+  const runId = String(frontendQuizGameId || '').trim();
+  if (!runId) return;
+  try {
+    localStorage.removeItem(getQuizRunConfigKey(runId));
+    if (readActiveQuizRunConfigIdSync() === runId) {
+      clearActiveQuizRunConfig();
+    }
+  } catch (error) {
+    console.error('[QuizRunConfig] Failed clearing run config:', error);
+  }
 };
 
 export const clearStoredQuizRunConfigs = (): void => {

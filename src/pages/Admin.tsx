@@ -46,6 +46,7 @@ import PrizePolicyPage from "@/pages/PrizePolicy";
 import ObsBoards from "@/pages/ObsBoards";
 import { setFrontendQuizGameId as setApiFrontendQuizGameId } from "@/config/apiConfig";
 import { getAppMode, getBackendTarget, getSSEStreamUrl, isSSEEnabled, APP_MODE_CONFIGS, modeSupportsViewers, modeRequiresSSE } from '@/config/appMode';
+import { getSSEHeartbeatTimeout, getSSEReconnectDelay, getViewerAnswerDelay, getViewerPostRevealGraceMs } from '@/config/appMode';
 import { useApp } from "@/context/AppContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { setQuizAnalyticsEnabled } from "@/lib/analyticsIdentity";
@@ -755,6 +756,14 @@ const Admin = () => {
       fixedLeaderboard,
       showSequenceNumbers,
       minimumCorrectScore,
+      appOperationMode: currentAppMode,
+      sseStreamEnabled: isSSEEnabled(),
+      sseStreamServerUrl: getBackendTarget() === 'none' ? '' : getSSEStreamUrl(),
+      sseHeartbeatTimeout: getSSEHeartbeatTimeout(),
+      sseReconnectDelay: getSSEReconnectDelay(),
+      viewerAnswerDelayMs: getViewerAnswerDelay(),
+      viewerPostRevealGraceMs: getViewerPostRevealGraceMs(),
+      soundVolume: Number(localStorage.getItem('soundVolume') || 0.5),
       topicSettings,
     });
 
@@ -810,6 +819,11 @@ const Admin = () => {
         fixedLeaderboard,
         showSequenceNumbers,
         minimumCorrectScore,
+        soundVolume: Number(localStorage.getItem('soundVolume') || 0.5),
+        sseHeartbeatTimeout: getSSEHeartbeatTimeout(),
+        sseReconnectDelay: getSSEReconnectDelay(),
+        viewerAnswerDelayMs: getViewerAnswerDelay(),
+        viewerPostRevealGraceMs: getViewerPostRevealGraceMs(),
       },
       streams: connectedStreams,
       runtime: {
@@ -1057,6 +1071,11 @@ const Admin = () => {
                             fixedLeaderboard,
                             showSequenceNumbers,
                             minimumCorrectScore,
+                            soundVolume: Number(localStorage.getItem('soundVolume') || 0.5),
+                            sseHeartbeatTimeout: getSSEHeartbeatTimeout(),
+                            sseReconnectDelay: getSSEReconnectDelay(),
+                            viewerAnswerDelayMs: getViewerAnswerDelay(),
+                            viewerPostRevealGraceMs: getViewerPostRevealGraceMs(),
                           },
                         };
                         saveQuizRunConfig({
@@ -1092,7 +1111,8 @@ const Admin = () => {
                         await createSessionQuestions(
                           questionsPerCategory,
                           maxUsedCountThreshold,
-                          shuffleQuestions
+                          shuffleQuestions,
+                          topicSettings
                         );
 
                         toast({

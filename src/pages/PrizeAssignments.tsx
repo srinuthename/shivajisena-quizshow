@@ -155,6 +155,7 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
   const [rows, setRows] = useState<CandidateRow[]>(buildDefaultRows(RANKED_PRIZE_TYPES));
   const [luckyRows, setLuckyRows] = useState<LuckyCandidateRow[]>([]);
   const [quizRunOptions, setQuizRunOptions] = useState<Array<{ id: string; label: string }>>([]);
+  const [runIdInput, setRunIdInput] = useState("");
   const [decisions, setDecisions] = useState<PrizeEligibilityDecision[]>([]);
   const [awards, setAwards] = useState<PrizeAwardRecord[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -764,7 +765,15 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
           prizeInstance: Number(award.prizeInstance || 1),
           channelId: String(award.assignedChannelId || ""),
           category: (award.category || "onlyonceinlifetime") as PrizeCategory,
+          prizeModality: (award.prizeModality || "coupon") as PrizeModality,
           couponCode: String(award.couponCode || ""),
+          couponProvider: String(award.couponProvider || ""),
+          couponTitle: String(award.couponTitle || ""),
+          couponValueLabel: String(award.couponValueLabel || ""),
+          couponRedeemUrl: String(award.couponRedeemUrl || ""),
+          cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+          cashCurrency: String(award.cashCurrency || "INR"),
+          cashReference: String(award.cashReference || ""),
         };
         if (idx >= 0) next[idx] = value;
         else next.push(value);
@@ -783,7 +792,15 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
               ...row,
               channelId: String(award.assignedChannelId || ""),
               category: (award.category || row.category) as PrizeCategory,
+              prizeModality: (award.prizeModality || row.prizeModality || "coupon") as PrizeModality,
               couponCode: String(award.couponCode || ""),
+              couponProvider: String(award.couponProvider || ""),
+              couponTitle: String(award.couponTitle || ""),
+              couponValueLabel: String(award.couponValueLabel || ""),
+              couponRedeemUrl: String(award.couponRedeemUrl || ""),
+              cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+              cashCurrency: String(award.cashCurrency || "INR"),
+              cashReference: String(award.cashReference || ""),
               rank: Number(award.rank || row.rank),
             }
           : row
@@ -979,11 +996,15 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
         candidateChannelId: String(award.candidateChannelId || award.assignedChannelId || ""),
         assignedChannelId: String(award.assignedChannelId || ""),
         category: (award.category || "regular") as PrizeCategory,
+        prizeModality: (award.prizeModality || "coupon") as PrizeModality,
         couponCode: String(award.couponCode || ""),
         couponProvider: String(award.couponProvider || ""),
         couponTitle: String(award.couponTitle || ""),
         couponValueLabel: String(award.couponValueLabel || ""),
         couponRedeemUrl: String(award.couponRedeemUrl || ""),
+        cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+        cashCurrency: String(award.cashCurrency || "INR"),
+        cashReference: String(award.cashReference || ""),
       };
     }
     setAwardEdits(next);
@@ -998,28 +1019,36 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
         candidateChannelId: prev[awardId]?.candidateChannelId || "",
         assignedChannelId: prev[awardId]?.assignedChannelId || "",
         category: prev[awardId]?.category || "regular",
+        prizeModality: prev[awardId]?.prizeModality || "coupon",
         couponCode: prev[awardId]?.couponCode || "",
         couponProvider: prev[awardId]?.couponProvider || "",
         couponTitle: prev[awardId]?.couponTitle || "",
         couponValueLabel: prev[awardId]?.couponValueLabel || "",
         couponRedeemUrl: prev[awardId]?.couponRedeemUrl || "",
+        cashAmount: prev[awardId]?.cashAmount || "",
+        cashCurrency: prev[awardId]?.cashCurrency || "INR",
+        cashReference: prev[awardId]?.cashReference || "",
         ...patch,
       },
     }));
   }, []);
 
   const saveAwardInline = useCallback(async (award: PrizeAwardRecord) => {
-    const draft = awardEdits[award._id] || {
+    const draft: AwardInlineEdit = awardEdits[award._id] || {
       prizeType: award.prizeType,
       prizeInstance: Number(award.prizeInstance || 1),
       candidateChannelId: String(award.candidateChannelId || award.assignedChannelId || ""),
       assignedChannelId: String(award.assignedChannelId || ""),
       category: (award.category || "regular") as PrizeCategory,
+      prizeModality: (award.prizeModality || "coupon") as PrizeModality,
       couponCode: String(award.couponCode || ""),
       couponProvider: String(award.couponProvider || ""),
       couponTitle: String(award.couponTitle || ""),
       couponValueLabel: String(award.couponValueLabel || ""),
       couponRedeemUrl: String(award.couponRedeemUrl || ""),
+      cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+      cashCurrency: String(award.cashCurrency || "INR"),
+      cashReference: String(award.cashReference || ""),
     };
 
     const assignedChannelId = String(draft.assignedChannelId || "").trim();
@@ -1077,13 +1106,21 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
   const renderAwardCard = (award: PrizeAwardRecord) => {
     const isRevoked = award.couponStatus === "revoked";
     const statusColor = isRevoked ? "text-destructive" : award.couponStatus === "claimed" ? "text-green-500" : "text-muted-foreground";
-    const edit = awardEdits[award._id] || {
+    const edit: AwardInlineEdit = awardEdits[award._id] || {
       prizeType: award.prizeType,
       prizeInstance: Number(award.prizeInstance || 1),
       candidateChannelId: String(award.candidateChannelId || award.assignedChannelId || ""),
       assignedChannelId: String(award.assignedChannelId || ""),
       category: (award.category || "regular") as PrizeCategory,
+      prizeModality: (award.prizeModality || "coupon") as PrizeModality,
       couponCode: String(award.couponCode || ""),
+      couponProvider: String(award.couponProvider || ""),
+      couponTitle: String(award.couponTitle || ""),
+      couponValueLabel: String(award.couponValueLabel || ""),
+      couponRedeemUrl: String(award.couponRedeemUrl || ""),
+      cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+      cashCurrency: String(award.cashCurrency || "INR"),
+      cashReference: String(award.cashReference || ""),
     };
     const selectedSlotKey = `${edit.prizeType}:${Number(edit.prizeInstance || 1)}`;
     const isInlineDirty =

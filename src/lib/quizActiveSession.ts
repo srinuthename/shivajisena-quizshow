@@ -1,8 +1,9 @@
 // Active Quiz Session Manager
-// Manages sessionStorage-based active session state (dies when tab closes)
-// Settings are stored in IndexedDB for persistence, but active session is ephemeral
+// sessionStorage tracks the active tab, localStorage keeps the active runtime
+// identity recoverable across browser refreshes until the quiz is explicitly ended.
 
 const SESSION_ACTIVE_KEY = 'quizActiveSession';
+const SESSION_ACTIVE_BACKUP_KEY = 'quizActiveSession:runtime';
 
 export interface ActiveQuizSession {
   sessionId: string;
@@ -35,7 +36,9 @@ export const startActiveSession = (
     skipInitialBackendRestore: options?.skipInitialBackendRestore === true,
   };
 
-  sessionStorage.setItem(SESSION_ACTIVE_KEY, JSON.stringify(session));
+  const serialized = JSON.stringify(session);
+  sessionStorage.setItem(SESSION_ACTIVE_KEY, serialized);
+  localStorage.setItem(SESSION_ACTIVE_BACKUP_KEY, serialized);
   console.log('[ActiveSession] Started new session:', session);
   return session;
 };
@@ -45,9 +48,13 @@ export const startActiveSession = (
  */
 export const getActiveSession = (): ActiveQuizSession | null => {
   try {
-    const data = sessionStorage.getItem(SESSION_ACTIVE_KEY);
+    const data = sessionStorage.getItem(SESSION_ACTIVE_KEY) || localStorage.getItem(SESSION_ACTIVE_BACKUP_KEY);
     if (!data) return null;
-    return JSON.parse(data) as ActiveQuizSession;
+    const session = JSON.parse(data) as ActiveQuizSession;
+    if (!sessionStorage.getItem(SESSION_ACTIVE_KEY)) {
+      sessionStorage.setItem(SESSION_ACTIVE_KEY, JSON.stringify(session));
+    }
+    return session;
   } catch {
     return null;
   }
@@ -61,7 +68,9 @@ export const updateActiveSession = (updates: Partial<ActiveQuizSession>): Active
   if (!current) return null;
 
   const updated = { ...current, ...updates };
-  sessionStorage.setItem(SESSION_ACTIVE_KEY, JSON.stringify(updated));
+  const serialized = JSON.stringify(updated);
+  sessionStorage.setItem(SESSION_ACTIVE_KEY, serialized);
+  localStorage.setItem(SESSION_ACTIVE_BACKUP_KEY, serialized);
   console.log('[ActiveSession] Updated session:', updated);
   return updated;
 };
@@ -72,6 +81,7 @@ export const updateActiveSession = (updates: Partial<ActiveQuizSession>): Active
 export const endActiveSession = (): void => {
   console.log('[ActiveSession] Ending session');
   sessionStorage.removeItem(SESSION_ACTIVE_KEY);
+  localStorage.removeItem(SESSION_ACTIVE_BACKUP_KEY);
 };
 
 /**
