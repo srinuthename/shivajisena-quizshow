@@ -202,24 +202,27 @@ export const getSessionData = (): SessionData | null => {
 };
 
 export const getSessionPools = (): Record<string, number[]> => {
-  return activeSessionData?.pools || {};
+  return getSessionData()?.pools || {};
 };
 
 export const getSessionQuestion = (category: string, questionNum: number): SessionQuestion | undefined => {
-  if (!activeSessionData) return undefined;
-  const categoryQuestions = activeSessionData.questions[category];
+  const sessionData = getSessionData();
+  if (!sessionData) return undefined;
+  const categoryQuestions = sessionData.questions[category];
   if (!categoryQuestions) return undefined;
   return categoryQuestions.find(q => q.questionNum === questionNum);
 };
 
 export const getSessionQuestionsByCategory = (category: string): SessionQuestion[] => {
-  if (!activeSessionData) return [];
-  return activeSessionData.questions[category] || [];
+  const sessionData = getSessionData();
+  if (!sessionData) return [];
+  return sessionData.questions[category] || [];
 };
 
 export const getSessionSubjects = (): string[] => {
-  if (!activeSessionData) return [];
-  return Object.keys(activeSessionData.questions);
+  const sessionData = getSessionData();
+  if (!sessionData) return [];
+  return Object.keys(sessionData.questions);
 };
 
 export const clearSessionQuestions = async (): Promise<void> => {
@@ -236,7 +239,7 @@ export const hasSessionData = (): boolean => {
 };
 
 export const getSessionSettings = (): SessionData['settings'] | null => {
-  return activeSessionData?.settings || null;
+  return getSessionData()?.settings || null;
 };
 
 export const isSessionValid = (): boolean => {
