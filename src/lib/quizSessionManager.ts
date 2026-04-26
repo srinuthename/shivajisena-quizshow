@@ -27,6 +27,7 @@ export interface SessionData {
     maxUsedCount: number;
     questionsPerCategory: number;
     shuffleEnabled: boolean;
+    topicSettings?: Record<string, boolean>;
   };
 }
 
@@ -35,6 +36,7 @@ export interface SessionData {
 // ---------------------------------------------------------------------------
 
 let activeSessionData: SessionData | null = null;
+const SESSION_DATA_KEY = 'quizRuntimeSessionData';
 
 const DEFAULT_QUIZ_LANGUAGE = 'te';
 
@@ -164,12 +166,17 @@ export const createSessionQuestions = async (
     settings: {
       maxUsedCount,
       questionsPerCategory,
-      shuffleEnabled
+      shuffleEnabled,
+      topicSettings,
     }
   };
 
-  // Store in-memory only — no localStorage or IndexedDB
   activeSessionData = sessionData;
+  try {
+    localStorage.setItem(SESSION_DATA_KEY, JSON.stringify(sessionData));
+  } catch {
+    // Runtime recovery cache is best-effort.
+  }
   return sessionData;
 };
 
@@ -183,6 +190,14 @@ export const setSessionData = (data: SessionData | null): void => {
 };
 
 export const getSessionData = (): SessionData | null => {
+  if (!activeSessionData) {
+    try {
+      const raw = localStorage.getItem(SESSION_DATA_KEY);
+      activeSessionData = raw ? (JSON.parse(raw) as SessionData) : null;
+    } catch {
+      activeSessionData = null;
+    }
+  }
   return activeSessionData;
 };
 
@@ -209,10 +224,15 @@ export const getSessionSubjects = (): string[] => {
 
 export const clearSessionQuestions = async (): Promise<void> => {
   activeSessionData = null;
+  try {
+    localStorage.removeItem(SESSION_DATA_KEY);
+  } catch {
+    // ignore
+  }
 };
 
 export const hasSessionData = (): boolean => {
-  return activeSessionData !== null;
+  return getSessionData() !== null;
 };
 
 export const getSessionSettings = (): SessionData['settings'] | null => {
@@ -236,5 +256,5 @@ export const getSessionCreatedAt = (): number | null => {
 
 /** @deprecated No longer needed — session data is in-memory only */
 export const restoreSessionDataFromIndexedDb = async (): Promise<SessionData | null> => {
-  return activeSessionData;
+  return getSessionData();
 };
