@@ -78,7 +78,7 @@ import { buildQuizAuthStartUrl } from "@/lib/sharedAuth";
 import { readQuizHostChannel } from "@/lib/quizHostChannel";
 import { getStoredApplicationId, HOST_PRODUCT_KEY } from "@/config/hostProduct";
 import { readMirroredAdminSettingSync } from "@/lib/adminConfigPersistence";
-import { readActiveQuizRunConfigSync, updateQuizRunConfig } from "@/lib/quizRunConfig";
+import { clearQuizRunConfig, readActiveQuizRunConfigSync, updateQuizRunConfig } from "@/lib/quizRunConfig";
 import { readLatestQuizSessionConfigSnapshot } from "@/lib/adminConfigPersistence";
 
 const readAdminNumber = (key: string, fallback: number): number => Number(readMirroredAdminSettingSync<number>(key, fallback));
@@ -155,14 +155,15 @@ const TeamQuizInner = () => {
   const { branding, pageTitle, isLoading: brandingLoading } = useBranding();
 
   const getResolvedEpisodeMeta = () => {
+    const activeRunConfig = readActiveQuizRunConfigSync(frontendQuizGameId || streamFrontendQuizGameId || searchParams.get('gameId'));
     const quizShowName = String(
-      localStorage.getItem('quizShowName') || branding.showTitle || 'Quiz Show'
+      activeRunConfig?.quizShowName || branding.showTitle || 'Quiz Show'
     ).trim() || 'Quiz Show';
     const episodeNumber = String(
-      localStorage.getItem('episodeNumber') || branding.episodeNumber || '1'
+      activeRunConfig?.episodeNumber || branding.episodeNumber || '1'
     ).trim() || '1';
     const episodeName = String(
-      localStorage.getItem('episodeName') || `${quizShowName} Episode #${episodeNumber}`
+      activeRunConfig?.episodeName || `${quizShowName} Episode #${episodeNumber}`
     ).trim() || `${quizShowName} Episode #${episodeNumber}`;
     return { episodeName, episodeNumber, quizShowName };
   };
