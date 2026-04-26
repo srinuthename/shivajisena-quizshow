@@ -996,11 +996,15 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
         candidateChannelId: String(award.candidateChannelId || award.assignedChannelId || ""),
         assignedChannelId: String(award.assignedChannelId || ""),
         category: (award.category || "regular") as PrizeCategory,
+        prizeModality: (award.prizeModality || "coupon") as PrizeModality,
         couponCode: String(award.couponCode || ""),
         couponProvider: String(award.couponProvider || ""),
         couponTitle: String(award.couponTitle || ""),
         couponValueLabel: String(award.couponValueLabel || ""),
         couponRedeemUrl: String(award.couponRedeemUrl || ""),
+        cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+        cashCurrency: String(award.cashCurrency || "INR"),
+        cashReference: String(award.cashReference || ""),
       };
     }
     setAwardEdits(next);
@@ -1015,11 +1019,15 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
         candidateChannelId: prev[awardId]?.candidateChannelId || "",
         assignedChannelId: prev[awardId]?.assignedChannelId || "",
         category: prev[awardId]?.category || "regular",
+        prizeModality: prev[awardId]?.prizeModality || "coupon",
         couponCode: prev[awardId]?.couponCode || "",
         couponProvider: prev[awardId]?.couponProvider || "",
         couponTitle: prev[awardId]?.couponTitle || "",
         couponValueLabel: prev[awardId]?.couponValueLabel || "",
         couponRedeemUrl: prev[awardId]?.couponRedeemUrl || "",
+        cashAmount: prev[awardId]?.cashAmount || "",
+        cashCurrency: prev[awardId]?.cashCurrency || "INR",
+        cashReference: prev[awardId]?.cashReference || "",
         ...patch,
       },
     }));
