@@ -155,6 +155,7 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
   const [rows, setRows] = useState<CandidateRow[]>(buildDefaultRows(RANKED_PRIZE_TYPES));
   const [luckyRows, setLuckyRows] = useState<LuckyCandidateRow[]>([]);
   const [quizRunOptions, setQuizRunOptions] = useState<Array<{ id: string; label: string }>>([]);
+  const [runIdInput, setRunIdInput] = useState("");
   const [decisions, setDecisions] = useState<PrizeEligibilityDecision[]>([]);
   const [awards, setAwards] = useState<PrizeAwardRecord[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -764,7 +765,15 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
           prizeInstance: Number(award.prizeInstance || 1),
           channelId: String(award.assignedChannelId || ""),
           category: (award.category || "onlyonceinlifetime") as PrizeCategory,
+          prizeModality: (award.prizeModality || "coupon") as PrizeModality,
           couponCode: String(award.couponCode || ""),
+          couponProvider: String(award.couponProvider || ""),
+          couponTitle: String(award.couponTitle || ""),
+          couponValueLabel: String(award.couponValueLabel || ""),
+          couponRedeemUrl: String(award.couponRedeemUrl || ""),
+          cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+          cashCurrency: String(award.cashCurrency || "INR"),
+          cashReference: String(award.cashReference || ""),
         };
         if (idx >= 0) next[idx] = value;
         else next.push(value);
@@ -783,7 +792,15 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
               ...row,
               channelId: String(award.assignedChannelId || ""),
               category: (award.category || row.category) as PrizeCategory,
+              prizeModality: (award.prizeModality || row.prizeModality || "coupon") as PrizeModality,
               couponCode: String(award.couponCode || ""),
+              couponProvider: String(award.couponProvider || ""),
+              couponTitle: String(award.couponTitle || ""),
+              couponValueLabel: String(award.couponValueLabel || ""),
+              couponRedeemUrl: String(award.couponRedeemUrl || ""),
+              cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+              cashCurrency: String(award.cashCurrency || "INR"),
+              cashReference: String(award.cashReference || ""),
               rank: Number(award.rank || row.rank),
             }
           : row
