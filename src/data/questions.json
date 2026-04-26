@@ -1,0 +1,1088 @@
+{
+  "General": {
+    "1": {
+      "text": "Noah built the ark. | నావను నిర్మించిన వ్యక్తి ఎవరు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Abraham | అబ్రహాం",
+        "Moses | మోశే",
+        "Noah | నోయా",
+        "David | దావీదు"
+      ],
+      "correctAnswer": 2
+    },
+    "2": {
+      "text": "Emoji puzzle 🕊️🌈🌊 – Which story/person is this? | ఈ ఎమోజీలు ఏ బైబిల్ వ్యక్తి/కథను సూచిస్తాయి?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Jonah | యోనా",
+        "Noah | నోయా",
+        "Ezekiel | యెహెజ్కేల్",
+        "Samuel | సామ్యూయేలు"
+      ],
+      "correctAnswer": 1
+    },
+    "3": {
+      "text": "Where was Jesus born? | యేసు జన్మించిన పట్టణం ఏది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Nazareth | నజరేతు",
+        "Jerusalem | యెరూషలేమ్",
+        "Bethlehem | బేత్లహేం",
+        "Galilee | గలీల"
+      ],
+      "correctAnswer": 2
+    },
+    "4": {
+      "text": "Where is the verse 'For God so loved the world' found? | ‘దేవుడు లోకమును ఎంతో ప్రేమించాడు…’ అనే వచనం ఎక్కడ ఉంది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Romans 8:1 | రోమీయులకు 8:1",
+        "Psalms 23:1 | కీర్తనలు 23:1",
+        "John 3:16 | యోహాను 3:16",
+        "Matthew 5:9 | మత్తయి 5:9"
+      ],
+      "correctAnswer": 2
+    },
+    "5": {
+      "text": "Which sea did Moses part? | మోషే దేవుని శక్తితో విడగొట్టిన సముద్రం ఏది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Dead Sea | చరవాహ సముద్రం",
+        "Arabian Sea | సుజలం సముద్రం",
+        "Red Sea | రెడ్ సముద్రం",
+        "Sea of Galilee | గలీల సముద్రం"
+      ],
+      "correctAnswer": 2
+    },
+    "6": {
+      "text": "Which Roman emperor legalized Christianity? | క్రైస్తవ మతానికి రాజ్యాచరణ ఇచ్చిన రోమన్ చక్రవర్తి ఎవరు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Nero | నిరో",
+        "Augustus | ఆగస్టస్",
+        "Constantine | కాన్స్టాంటైన్",
+        "Diocletian | డయోక్లెట్ియన్"
+      ],
+      "correctAnswer": 2
+    },
+    "7": {
+      "text": "Emoji ⚔️🪨👦🗡️ – Which Bible story is this? | ఈ ఎమోజీలు ఏ బైబిల్ సంఘటనను సూచిస్తున్నాయి?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Samson | సామ్సన్ మరియు ఫిలిస్తీయర్లు",
+        "David and Goliath | దావీద్ మరియు గాలీయత్",
+        "Joshua and Jericho | యెహోషువా మరియు జెరికో",
+        "Gideon | గీదోన్"
+      ],
+      "correctAnswer": 1
+    },
+    "8": {
+      "text": "Which Bible book is written as a love poem? | ప్రేమ గీతంగా రాసిన బైబిల్ పుస్తకం ఏది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Proverbs | నీతి వాక్యాలు",
+        "Psalms | కీర్తనలు",
+        "Ecclesiastes | ఎక్లెసియస్తెస్",
+        "Song of Solomon | సొంగు సొలొమోన్ (సంగీతం)"
+      ],
+      "correctAnswer": 3
+    },
+    "9": {
+      "text": "According to Mark 15:25, at what hour was Jesus crucified? | మార్కు 15:25 ప్రకారం యేసును ఏ గంటలో శిలువేశారు?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "First hour | ప్రథమ గంట",
+        "Third hour | తృతీయ గంట",
+        "Sixth hour | షష్ఠి గంట",
+        "Ninth hour | నవమ గంట"
+      ],
+      "correctAnswer": 1
+    },
+    "10": {
+      "text": "Which council defined the doctrine of the Trinity in 325 AD? | త్రిత్వ సిద్ధాంతాన్ని అధికారికంగా ప్రకటించిన కౌన్సిల్ ఏది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Council of Trent | ట్రెంట్ కౌన్సిల్",
+        "Council of Chalcedon | ఖాల్సెడాన్",
+        "Council of Nicaea | నికియా కౌన్సిల్",
+        "Council of Jerusalem | యెరూషలేమ్ కౌన్సిల్"
+      ],
+      "correctAnswer": 2
+    },
+    "11": {
+      "text": "What does Pentecost mainly commemorate? | పెంటికోస్తు దినం ప్రధానంగా ఏమిని గుర్తుచేస్తుంది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Resurrection | యేసువు పునరుత్థానం",
+        "Descent of the Holy Spirit | పవిత్రాత్మ ఆవిర్భావం",
+        "Beginning of baptism | బాప్టిజమ్ ప్రారంభం",
+        "Creation | దేవుని సృష్టి"
+      ],
+      "correctAnswer": 1
+    },
+    "12": {
+      "text": "Which prayer is known as the Lord’s Prayer? | ప్రభువు బోధించిన ముఖ్య ప్రార్థన ఏది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Long prayer | పితా మనస్సులో పొడవైన ప్రార్థన",
+        "Rosary | మాలా ప్రార్థన",
+        "Our Father (Pater Noster) | పరలోకమందున్న మా తండ్రి…",
+        "Sanskrit hymn | సంస్కృత శ్లోకం"
+      ],
+      "correctAnswer": 2
+    },
+    "13": {
+      "text": "Where are the Ten Commandments recorded? | పది ఆజ్ఞలు ఏ గ్రంథంలో ఉన్నాయి?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Nehemiah | నెహెమ్యా",
+        "Exodus | నిర్గమకాండము",
+        "Job | యోబు",
+        "John | యోహాను"
+      ],
+      "correctAnswer": 1
+    },
+    "14": {
+      "text": "On which day did God rest? | సృష్టి తరువాత దేవుడు ఏ రోజు విశ్రాంతి తీసుకున్నాడు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Feast day | పండుగ రోజు",
+        "Day of heaven | పరముడు రోజు",
+        "Seventh day | ఏడవ రోజు",
+        "Successful day | సఫలం రోజు"
+      ],
+      "correctAnswer": 2
+    },
+    "15": {
+      "text": " Ref: Matthew 16:16, By whom was Jesus proclaimed as the Christ? | యేసును క్రీస్తుగా ప్రకటించినది ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Peter | పేతురు ",
+        "Pharisees | పాఫీయర్స్ ద్వారా",
+        "Paul | పావెల్ ద్వారా",
+        "John the Baptist | యోహాను బాప్తస్తుడు ద్వారా"
+      ],
+      "correctAnswer": 0
+    },
+    "16": {
+      "text": "How many books are there in the KJV Bible? | KJV బైబిల్‌లో మొత్తం ఎన్ని గ్రంథాలు ఉన్నాయి?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "39 | 39",
+        "66 | 66",
+        "73 | 73",
+        "27 | 27"
+      ],
+      "correctAnswer": 1
+    },
+    "17": {
+      "text": "Which book contains the Acts of the Apostles? | అపొస్తలుల కార్యములు ఏ గ్రంథం?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Holy Book | పవిత్ర గ్రంథం",
+        "Criminal book | ఆపరాధ గ్రంథం",
+        "Acts | ప్రేరిత కార్యములు",
+        "Covenant | ప్రమాణం"
+      ],
+      "correctAnswer": 2
+    },
+    "18": {
+      "text": "Who is associated with the famous peace/reformation movement? | సంస్కరణ ఉద్యమానికి నాయకత్వం వహించిన వ్యక్తి ఎవరు?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Martin Luther | మార్టిన్ లూతర్",
+        "Augustine | ఆగస్టిన్",
+        "Pope | పాపే",
+        "Theodore | థియోడోర్లు"
+      ],
+      "correctAnswer": 0
+    },
+    "19": {
+      "text": "What is the 40‑day season of fasting called? | 40 రోజుల ఉపవాస కాలాన్ని ఏమని పిలుస్తారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Beginning | అశ్వారంభం",
+        "Lent | లెంట్ ",
+        "Birthday | పుట్టినరోజు",
+        "Festival season | పండుగ సీజన్"
+      ],
+      "correctAnswer": 1
+    },
+    "20": {
+      "text": "Whose son was King David? | దావీదు ఎవరి కుమారుడు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Jezebel | యెసేబేలు",
+        "Isaiah | యెషాయా",
+        "Israel | యిస్రాయేలు",
+        "Jesse | యీసేలు"
+      ],
+      "correctAnswer": 3
+    },
+    "21": {
+      "text": "Which parable is known as the Parable of the Prodigal Son? | తప్పిపోయిన కుమారుడి ఉపమానం ఏ కథ?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Matthew 15:11–32 ",
+        "Luke 15:11–32 ",
+        "John 15:11–32",
+        "Joseph 15:11–32"
+      ],
+      "correctAnswer": 1
+    },
+    "22": {
+      "text": "What is false about John the Baptist? | బాప్టీస్మం ఇచ్చు యోహాను గురుంచి ఇందులో ఏది అబద్ధం?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "A prophet sent by God | దేవునిచేత పంపబడిన ప్రవక్త",
+        "The one who baptized Jesus in the River Euphrates | యూఫ్రటీస్ నదిలో యేసును బాప్తిస్మమిచ్చినవాడు",
+        "The son of Zechariah and Elizabeth | జెకర్యా మరియు ఎలిజబెత్‌ల కుమారుడు",
+        "A preacher of repentance | పశ్చాత్తాప బాప్తిస్మమును ప్రకటించిన వాడు"
+      ],
+      "correctAnswer": 1
+    },
+    "23": {
+      "text": "How many loaves were used to feed 5000 people? | 5000 మందిని తినిపించేందుకు ఎన్ని రొట్టెలు ఉపయోగించారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "2 loaves | 2 రొట్టెలు",
+        "5 loaves | 5 రొట్టెలు",
+        "7 loaves | 7 రొట్టెలు",
+        "12 loaves | 12 రొట్టెలు"
+      ],
+      "correctAnswer": 1
+    },
+    "24": {
+      "text": "Who helped the wounded man in the Good Samaritan story? | మంచి సమరియా వ్యక్తి కథలో గాయపడిన వానికి ఎవరు సహాయం చేశారు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Priest | పాపియ్యుడు",
+        "Pastor | పాస్టర్",
+        "Samaritan | సమారియా వాసి",
+        "King | రాజు"
+      ],
+      "correctAnswer": 2
+    },
+    "25": {
+      "text": "To which church were most of Paul’s early letters written? | పౌలు మొదటగా ఎక్కువగా ఏ సంఘానికి లేఖలు వ్రాసాడు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Rome | రోమా",
+        "Corinthians | కోరింథియన్‌లు",
+        "Luke | లూకా",
+        "John | యోహాను"
+      ],
+      "correctAnswer": 1
+    },
+    "26": {
+      "text": "Which is NOT one of the Ten Commandments? | పది ఆజ్ఞల్లో లేని ఆజ్ఞ ఏది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "You shall not commit adultery | వ్యభిచరించరాదు ",
+        "You shall not steal| దొంగతనం చేయరాదు ",
+        "You shall not take the name of the Lord your God in vain | నీ దేవుని యెహోవా నామమును వృథా వినియోగం చేయరాదు.",
+        "None of these | పైవేవి కాదు"
+      ],
+      "correctAnswer": 3
+    },
+    "27": {
+      "text": "In which book is Jonah’s three days in the fish recorded? | యోనా మూడు రోజులు మత్స్యంలో ఉన్న సంఘటన ఏ గ్రంథంలో ఉంది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Jonah | యోనా పుస్తకం",
+        "Isaiah | యెషాయా",
+        "Jeremiah | యిరమియా",
+        "Nehemiah | నెహెమ్యా"
+      ],
+      "correctAnswer": 0
+    },
+    "28": {
+      "text": "Who wrote many of the Psalms? | అనేక కీర్తనలను రచించిన వ్యక్తి ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "David | దావీద్",
+        "Solomon | సోలొమోన్",
+        "Jesus | యేసు",
+        "Paul | పావెల్"
+      ],
+      "correctAnswer": 0
+    },
+    "29": {
+      "text": "What do the 70 nations symbolize in the Bible? | బైబిల్‌లో 70 సంఖ్య ఏమి సూచిస్తుంది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Kingdoms | రాజ్యాలు",
+        "Nations | దేశాల మొత్తం",
+        "Laws | ధర్మశాస్త్రాలు",
+        "Meaning | పరమార్థం"
+      ],
+      "correctAnswer": 1
+    },
+    "30": {
+      "text": "What does the number 144,000 symbolize in Revelation? | ప్రకటన గ్రంథంలో 1,44,000 ఏమి సూచిస్తుంది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Literal number | కేవలం భౌతిక సంఖ్య",
+        "Complete servants of God | దేవుని దాసుల సంపూర్ణ సంఖ్యా ప్రతీక",
+        "David  Army | దావీదు సైన్యం ",
+        "Countries | దేశాల సంఖ్య"
+      ],
+      "correctAnswer": 1
+    },
+    "31": {
+      "text": "Who first saw the risen Jesus? | పునరుత్థానమైన యేసును మొదట చూసినవారు ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "John  |  యోహాన్ ",
+        "Mark  | మార్కు ",
+        "Mary | మరియ",
+        "Mary Magdalene | మేరియం మాగ్దలనే"
+      ],
+      "correctAnswer": 3
+    },
+    "32": {
+      "text": "In which Gospel is the Prodigal Son found? | తప్పిపోయిన కుమారుడి ఉపమానం ఏ సువార్తలో ఉంది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Luke | లూకా",
+        "Matthew | మత్తయి",
+        "Mark | మార్కు",
+        "John | యోహాను"
+      ],
+      "correctAnswer": 0
+    },
+    "33": {
+      "text": "What is the festival celebrated 50 days after Easter called? | ఈస్టర్ తర్వాత 50వ రోజు జరుపుకునే పండుగ ఏది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Passover | పాస్చా",
+        "Pentecost | పెంటికోస్టు",
+        "Jubilee | జూబ్లీ",
+        "Salvation Day | రక్షణ దినం"
+      ],
+      "correctAnswer": 1
+    },
+    "34": {
+      "text": "At the beginning, over what did God’s Spirit hover? | సృష్టి మొదట దేవుని ఆత్మ ఏ మీద కదిలింది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Water | నీరు పై",
+        "Air | గాలి పై",
+        "Earth | ధరా పై",
+        "Darkness | అంధకారం పై"
+      ],
+      "correctAnswer": 0
+    },
+    "35": {
+      "text": "How many plagues came upon Egypt? | ఈజిప్టులో దేవుడు పంపిన విపత్కరాలు ఎన్ని?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "7 | 7",
+        "10 | 10",
+        "12 | 12",
+        "5 | 5"
+      ],
+      "correctAnswer": 1
+    },
+    "36": {
+      "text": "Where did the Last Supper take place? | చివరి భోజనం ఎక్కడ జరిగింది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Galilee | గాలీల్లో",
+        "Temple | దేవాలయంలో",
+        "Upper Room in Jerusalem | జెరూసలేంలో ఒక గదిలో",
+        "Seashore | సముద్రతీరంలో"
+      ],
+      "correctAnswer": 2
+    },
+    "37": {
+      "text": "What form is the Book of Psalms mainly written in? | కీర్తనల గ్రంథం ప్రధానంగా ఏ రూపంలో ఉంది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Songs and prayers | గేయాలు, ప్రార్థనలు",
+        "Stories | కధలు",
+        "Judgments | న్యాయాలు",
+        "Prophecies | ప్రవచనాలు"
+      ],
+      "correctAnswer": 0
+    },
+    "38": {
+      "text": "In which year did Martin Luther post the 95 Theses? | మార్టిన్ లూథర్ 95 సిద్ధాంతాలు ఏ సంవత్సరంలో ప్రకటించాడు?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "1517 ",
+        "1453 ",
+        "1600 ",
+        "1701 "
+      ],
+      "correctAnswer": 0
+    },
+    "39": {
+      "text": "Who is a Samaritan in the Bible? | బైబిల్‌లో సమరియుడు ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Resident of Samaria | సామారీయం నివాసి",
+        "Jesus | యేసు",
+        "Paul | పావెల్",
+        "Moses | మోశే"
+      ],
+      "correctAnswer": 0
+    },
+    "40": {
+      "text": "How many people with the name Mary found in the Bible? | బైబిల్‌లో మేరీ అనే పేరుతో ఎంతమంది వ్యక్తులు ఉన్నారు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "3",
+        "4",
+        "2",
+        "1"
+      ],
+      "correctAnswer": 0
+    },
+    "41": {
+      "text": "Who was the first disciple called by Jesus? | యేసు మొదటగా పిలిచిన శిష్యుడు ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Peter | పետրస్",
+        "John | యోహాను",
+        "Andrew | అండ్రూ",
+        "Paul | పాల "
+      ],
+      "correctAnswer": 2
+    },
+    "42": {
+      "text": "How many books are there in the Bible? | ప్రొటెస్టెంట్ బైబిల్‌లో ఎన్ని గ్రంథాలు ఉన్నాయి?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "45 | 45 పుస్తకాలు",
+        "66 | 66 పుస్తకాలు",
+        "73 | 73 పుస్తకాలు",
+        "27 | 27 పుస్తకాలు"
+      ],
+      "correctAnswer": 1
+    },
+    "43": {
+      "text": "Who is the victim in the Good Samaritan story? | మంచి సమరియా కథలో గాయపడిన వ్యక్తి ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Traveler | యాత్రికుడు",
+        "King | రాజు",
+        "Householder | కాపురుడు",
+        "Doctor | వైద్యుడు"
+      ],
+      "correctAnswer": 0
+    },
+    "44": {
+      "text": "Did Jesus eat with His disciples after resurrection? | పునరుత్థానం తర్వాత యేసు శిష్యులతో కలిసి భోజనం చేశాడా?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Yes | అవును ",
+        "No | కాదు",
+        "Refused | ఇచ్చినా తినలేదు ",
+        "Asked and ate | అడిగి మరీ తిన్నాడు"
+      ],
+      "correctAnswer": 3
+    },
+    "45": {
+      "text": "Where was Jesus baptized? | యేసుకు బాప్తిస్మం ఎక్కడ ఇవ్వబడింది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "River Jordan | జోర్దన్ నది",
+        "River Nile | నైల్ నది",
+        "Seashore | సాముద్ర తీరము",
+        "Sea of Galilee | గలీల సరస్సు"
+      ],
+      "correctAnswer": 0
+    },
+    "46": {
+      "text": "Who is known as the great healer in the Bible? | బైబిల్‌లో గొప్ప స్వస్థపరుడు ఎవరు?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Hezekiah | హచేజియా",
+        "Jesus | యేసు",
+        "Paul | పవెల్",
+        "Pharisees | పెరియర్స్"
+      ],
+      "correctAnswer": 1
+    },
+    "47": {
+      "text": "What do the 12 tribes represent? | ఇస్రాయేలు 12 గోత్రాలు ఏమిని సూచిస్తాయి?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "12 tribes of Israel | 12 మేళాలు",
+        "People of God | దేవుని ప్రజలు",
+        "12 gods | 12 దేవుళ్ళు",
+        "12 fruits | 12 పండ్లు"
+      ],
+      "correctAnswer": 1
+    },
+    "48": {
+      "text": "When did the Holy Spirit descend? | పవిత్రాత్మ ఎప్పుడు దిగివచ్చాడు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "At Jesus’ birth | యేసు జననం సమయంలో",
+        "On Pentecost | పెంటికోస్టు రోజున",
+        "On Christmas | ఖ్రీస్మస్ రోజున",
+        "On Passover | పాస్కా రోజున"
+      ],
+      "correctAnswer": 1
+    },
+    "49": {
+      "text": "Which book describes the early Christian church? | మొదటి క్రైస్తవ సంఘం ఎలా ఏర్పడిందో చెప్పే గ్రంథం ఏది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Law | న్యాయం",
+        "Acts | ప్రేరిత కార్యములు",
+        "Revelation | రెవలేషన్",
+        "Isaac | ఇశాఖ్"
+      ],
+      "correctAnswer": 1
+    },
+    "50": {
+      "text": "Who are the twelve apostles? | అపోస్టుల్స్ అనగా ఏమిటి?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Early church | ఆపరపు సమాజం",
+        "Holy Bible | పవిత్ర గ్రంథం",
+        "Jesus disciples | ఏసు యొక్క శిష్యులు ",
+        "Revelation | రెవలేషన్"
+      ],
+      "correctAnswer": 2
+    },
+    "51": {
+      "text": "What does Good Friday commemorate? | గుడ్ ఫ్రైడే ఏమిని జ్ఞాపకం చేస్తుంది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Birth of Jesus | యేసు జననం",
+        "Teachings of Jesus | యేసు శిక్షణ",
+        "Crucifixion of Jesus | యేసు క్రూసిఫికేషన్",
+        "Pentecost | పెంటికోస్టు"
+      ],
+      "correctAnswer": 2
+    },
+    "52": {
+      "text": "What is the first line of the Lord’s Prayer? | ప్రభు ప్రార్థనలో మొదటి వాక్యం ఏది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Our Father in heaven | ప్రభూ, మా తండ్రి...",
+        "O our Savior | ప్రభూ, మా రక్షకుడా...",
+        "Give us money | దేవుడా, మాకు డాలర్ ఇవ్వు",
+        "Hallowed be Your name | ప్రభూ, నీ పేరును పవిత్రం చేయబడినది"
+      ],
+      "correctAnswer": 3
+    },
+    "53": {
+      "text": "Who is called a prophet? | ప్రవక్త అంటే ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Kings | రాజులు",
+        "One who speaks God’s message | దేవుని సందేశాన్ని తెలిపే వారు",
+        "Doctors | వైద్యులు",
+        "Merchants | వ్యాపారులు"
+      ],
+      "correctAnswer": 1
+    },
+    "54": {
+      "text": "To which city did Paul first preach? | పౌలు మొదటగా宣వ్యాఖ్యాన చేసిన ప్రముఖ నగరం ఏది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Alexandria | అలెగ్జాండ్రియా",
+        "Athens | అథెన్స్",
+        "Patmos | పత్మ",
+        "Corinth | కోరింథ్స్"
+      ],
+      "correctAnswer": 1
+    },
+    "55": {
+      "text": "Which object is symbolized by the word 'staff'? | ‘స్టాఫ్’ అనే పదం బైబిల్‌లో దేనిని సూచిస్తుంది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Clothes | బట్టలు",
+        "Authority and leadership | అధికారం మరియు నాయకత్వం",
+        "Band | బాన్డు",
+        "Region | ప్రాంతం"
+      ],
+      "correctAnswer": 1
+    },
+    "56": {
+      "text": "What is the main biblical teaching on giving? | బైబిల్ బోధించే ప్రధాన దాన సూత్రం ఏమిటి?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Economy | ఆర్థికత",
+        "Service and love | సేవ మరియు ప్రేమ",
+        "Kingdom politics | రాజ్య విధానం",
+        "Justice system | న్యాయ వ్యవస్థ"
+      ],
+      "correctAnswer": 1
+    },
+    "57": {
+      "text": "Who is Apostle Peter? | అపొస్తలుడైన పేతురు ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Silver worker | సైర్వజ్",
+        "Simon  | సీమోను ",
+        "Wife of James | యాకుబుని భార్య",
+        "Paul | పల"
+      ],
+      "correctAnswer": 1
+    },
+    "58": {
+      "text": "Which book speaks of the Seven Churches? | ఏ గ్రంథంలో ఏడు సంఘాల గురించి ఉంది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Johannine gospel | యోహాను అన్నిఖ్యాన్",
+        "Revelation | రెవలేషన్",
+        "Luke | లూకా",
+        "Ezekiel | యెహెజ్కేల్"
+      ],
+      "correctAnswer": 1
+    },
+    "59": {
+      "text": "What is the Trinity? | త్రిత్వం అంటే ఏమిటి?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Father, Son, Holy Spirit | త్రయం (Father, Son, Holy Spirit)",
+        "Drum | త్రమ్",
+        "Third | తీసర",
+        "Triangle | త్రికోణం"
+      ],
+      "correctAnswer": 0
+    },
+    "60": {
+      "text": "What does the number 40 usually symbolize in the Bible? | బైబిల్‌లో 40 సంఖ్య సాధారణంగా ఏమిని సూచిస్తుంది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Perfection | పరిపూర్ణత",
+        "Testing and preparation | పరీక్ష మరియు ఆచరణ",
+        "Vision | దర్శనం",
+        "Collection | సంగ్రహం"
+      ],
+      "correctAnswer": 1
+    }
+  },
+  "Crucifixion": {
+    "1": {
+      "text": "Where was Jesus crucified? | యేసును ఎక్కడ శిలువ వేసారు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Bethlehem | బేత్లహేము",
+        "Nazareth | నజరేతు",
+        "Golgotha | గోల్గొతా",
+        "Galilee | గలీల"
+      ],
+      "correctAnswer": 2
+    },
+    "2": {
+      "text": "On which day was Jesus crucified? | యేసును ఏ రోజు శిలువ వేసారు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Sunday | ఆదివారం",
+        "Friday | శుక్రవారం",
+        "Saturday | శనివారం",
+        "Monday | సోమవారం"
+      ],
+      "correctAnswer": 1
+    },
+    "3": {
+      "text": "Who sentenced Jesus to be crucified? | యేసును శిలువకు అప్పగించినవాడు ఎవరు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Herod | హెరోదు",
+        "Pilate | పిలాతు",
+        "Caesar | కైసరు",
+        "Annas | అన్నాస్"
+      ],
+      "correctAnswer": 1
+    },
+    "4": {
+      "text": "Who helped Jesus carry the cross? | యేసు శిలువ మోసేందుకు ఎవరు సహాయం చేశారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Peter | పేతురు",
+        "John | యోహాను",
+        "Simon of Cyrene | కిరేనేయ సీమోను",
+        "Joseph | యోసేపు"
+      ],
+      "correctAnswer": 2
+    },
+    "5": {
+      "text": "What inscription was placed above Jesus on the cross? | యేసు శిలువ మీద ఉంచిన శాసనం ఏమిటి?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Son of God | దేవుని కుమారుడు",
+        "King of the Jews | యూదుల రాజు",
+        "Messiah | మెస్సీయ",
+        "Prophet | ప్రవక్త"
+      ],
+      "correctAnswer": 1
+    },
+    "6": {
+      "text": "What time was Jesus crucified according to Mark 15:25? | మార్కు 15:25 ప్రకారం యేసును ఏ గంటకు శిలువ వేసారు?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "First hour | మొదటి గంట",
+        "Third hour | మూడవ గంట",
+        "Sixth hour | ఆరవ గంట",
+        "Ninth hour | తొమ్మిదవ గంట"
+      ],
+      "correctAnswer": 1
+    },
+    "7": {
+      "text": "Who stood near the cross of Jesus? | యేసు శిలువ దగ్గర ఎవరు నిలిచారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Mary Magdalene | మారియ మగ్దలయ",
+        "Mary, mother of Jesus | యేసు తల్లి మారియ",
+        "John the Apostle | అపొస్తలుడు యోహాను",
+        "All of the above | పైవారందరూ"
+      ],
+      "correctAnswer": 3
+    },
+    "8": {
+      "text": "What did the soldiers do with Jesus’ clothes? | సైనికులు యేసు వస్త్రాలతో ఏమి చేసారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Burned them | కాల్చివేశారు",
+        "Sold them | అమ్మేశారు",
+        "Cast lots | చీట్లు వేసారు",
+        "Returned to disciples | శిష్యులకు ఇచ్చారు"
+      ],
+      "correctAnswer": 2
+    },
+    "9": {
+      "text": "What were Jesus’ last words on the cross according to Luke 23:46? | లూకా 23:46 ప్రకారం యేసు చివరి మాటలు ఏమిటి?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "It is finished | పూర్తయ్యింది",
+        "Father, forgive them | తండ్రీ, వీరిని క్షమించుము",
+        "Father, into Your hands I commit My spirit | తండ్రీ, నా ఆత్మను నీ చేతుల్లో అప్పగించుచున్నాను",
+        "My God, why have You forsaken Me? | నా దేవా, నన్ను ఎందుకు విడిచిపెట్టావు?"
+      ],
+      "correctAnswer": 2
+    },
+    "10": {
+      "text": "Who buried the body of Jesus after the crucifixion? | శిలువ తరువాత యేసు శరీరాన్ని ఎవరు సమాధి చేసారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Peter | పేతురు",
+        "Joseph of Arimathea | అరిమతేయ యోసేపు",
+        "Nicodemus | నికోదేము",
+        "Pilate | పిలాతు"
+      ],
+      "correctAnswer": 1
+    }
+  },
+  "SongOfSolomon": {
+    "1": {
+      "text": "Who is traditionally considered the author of the Song of Solomon? | పరంపరగా సొలొమోను గీతాల గ్రంథానికి రచయితగా ఎవరు భావించబడుతున్నారు?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "David | దావీదు",
+        "Solomon | సొలొమోను",
+        "Isaiah | యెషయా",
+        "Moses | మోషే"
+      ],
+      "correctAnswer": 1
+    },
+    "2": {
+      "text": "The Song of Solomon primarily talks about what theme? | సొలొమోను గీతాల ప్రధాన విషయమేమిటి?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "War | యుద్ధం",
+        "Wisdom | జ్ఞానం",
+        "Love | ప్రేమ",
+        "Law | ధర్మశాస్త్రం"
+      ],
+      "correctAnswer": 2
+    },
+    "3": {
+      "text": "How many chapters are there in the Song of Solomon? | సొలొమోను గీతాలలో మొత్తం ఎన్ని అధ్యాయాలు ఉన్నాయి?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "6 | ఆరు",
+        "7 | ఏడు",
+        "8 | ఎనిమిది",
+        "10 | పది"
+      ],
+      "correctAnswer": 2
+    },
+    "4": {
+      "text": "The woman in the Song of Solomon is often called what? | సొలొమోను గీతాలలో ఉన్న మహిళను సాధారణంగా ఏమని పిలుస్తారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "The Shulammite | శూలమితు",
+        "The Queen | రాణి",
+        "The Prophetess | ప్రవక్తురాలు",
+        "The Bride of Zion | సీయోను వధువు"
+      ],
+      "correctAnswer": 0
+    },
+    "5": {
+      "text": "Song of Solomon 1:2 begins with which expression? | సొలొమోను గీతాలు 1:2 ఏ భావనతో ప్రారంభమవుతుంది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "A prayer | ప్రార్థన",
+        "A command | ఆజ్ఞ",
+        "An expression of love | ప్రేమాభివ్యక్తి",
+        "A warning | హెచ్చరిక"
+      ],
+      "correctAnswer": 2
+    },
+    "6": {
+      "text": "Which drink is compared to love in Song of Solomon 1:2? | సొలొమోను గీతాలు 1:2 లో ప్రేమను ఏ పానీయంతో పోల్చారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Water | నీరు",
+        "Milk | పాల",
+        "Wine | ద్రాక్షారసం",
+        "Oil | నూనె"
+      ],
+      "correctAnswer": 2
+    },
+    "7": {
+      "text": "How is the beloved compared in Song of Solomon 1:9? | సొలొమోను గీతాలు 1:9 లో ప్రియురాలిని ఏదితో పోల్చారు?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "A dove | పావురం",
+        "A mare among Pharaoh’s chariots | పారవో రథాలలోని గుఱ్ఱం",
+        "A cedar tree | దేవదారు",
+        "A queen | రాణి"
+      ],
+      "correctAnswer": 1
+    },
+    "8": {
+      "text": "What natural feature is frequently used as imagery in the Song of Solomon? | సొలొమోను గీతాలలో తరచుగా ఉపయోగించే సహజ దృశ్య రూపకం ఏమిటి?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Mountains | పర్వతాలు",
+        "Gardens | తోటలు",
+        "Deserts | ఎడారులు",
+        "Seas | సముద్రాలు"
+      ],
+      "correctAnswer": 1
+    },
+    "9": {
+      "text": "Song of Solomon is classified under which type of biblical literature? | సొలొమోను గీతాలు ఏ రకమైన బైబిల్ సాహిత్యంలోకి వస్తుంది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Law | ధర్మశాస్త్రం",
+        "History | చరిత్ర",
+        "Poetry | కవిత్వం",
+        "Prophecy | ప్రవచనం"
+      ],
+      "correctAnswer": 2
+    },
+    "10": {
+      "text": "Which part of the Bible contains the Song of Solomon? | సొలొమోను గీతాలు బైబిల్‌లో ఏ భాగానికి చెందుతుంది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Pentateuch | ధర్మశాస్త్ర గ్రంథాలు",
+        "Historical Books | చారిత్రక గ్రంథాలు",
+        "Wisdom Books | జ్ఞాన గ్రంథాలు",
+        "Prophets | ప్రవక్తల గ్రంథాలు"
+      ],
+      "correctAnswer": 2
+    },
+    "11": {
+      "text": "The love in Song of Solomon is often interpreted allegorically as love between whom? | సొలొమోను గీతాల ప్రేమను ప్రతీకాత్మకంగా ఎవరి మధ్య ప్రేమగా అర్థం చేసుకుంటారు?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "God and Israel | దేవుడు – ఇశ్రాయేలు",
+        "Christ and the Church | క్రీస్తు – సంఘం",
+        "Both of the above | పై రెండు కూడా",
+        "Kings and nations | రాజులు – జనములు"
+      ],
+      "correctAnswer": 2
+    },
+    "12": {
+      "text": "Which body part is frequently praised in the Song of Solomon? | సొలొమోను గీతాలలో తరచుగా ప్రశంసించబడే శరీర భాగం ఏది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Hands | చేతులు",
+        "Eyes | కళ్ళు",
+        "Feet | పాదాలు",
+        "Ears | చెవులు"
+      ],
+      "correctAnswer": 1
+    },
+    "13": {
+      "text": "Song of Solomon 8:6 says that love is as strong as what? | సొలొమోను గీతాలు 8:6 ప్రకారం ప్రేమ ఏదిని పోలి బలంగా ఉంటుంది?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "War | యుద్ధం",
+        "Death | మరణం",
+        "Fire | అగ్ని",
+        "Storm | తుఫాను"
+      ],
+      "correctAnswer": 1
+    },
+    "14": {
+      "text": "Which symbol is used for beauty in Song of Solomon? | సొలొమోను గీతాలలో అందానికి ఏ చిహ్నం ఉపయోగించబడింది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Rose of Sharon | షారోను పూవు",
+        "Lily of the valley | లోయలో లిల్లీ",
+        "Both of the above | పై రెండూ",
+        "Olive tree | జయితూని చెట్టు"
+      ],
+      "correctAnswer": 2
+    },
+    "15": {
+      "text": "What do vineyards often symbolize in the Song of Solomon? | సొలొమోను గీతాలలో ద్రాక్షతోటలు సాధారణంగా ఏమిని సూచిస్తాయి?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Work | పని",
+        "Wealth | ధనం",
+        "Love and relationship | ప్రేమ మరియు సంబంధం",
+        "Judgment | తీర్పు"
+      ],
+      "correctAnswer": 2
+    },
+    "16": {
+      "text": "Song of Solomon presents love as which of the following? | సొలొమోను గీతాలలో ప్రేమను ఏ విధంగా చూపించారు?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Weak | బలహీనమైనది",
+        "Temporary | తాత్కాలికం",
+        "Powerful and enduring | శక్తివంతమైన మరియు శాశ్వతమైనది",
+        "Dangerous | ప్రమాదకరమైనది"
+      ],
+      "correctAnswer": 2
+    },
+    "17": {
+      "text": "Which season is commonly mentioned in Song of Solomon? | సొలొమోను గీతాలలో తరచుగా ప్రస్తావించబడే ఋతువు ఏది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Winter | శీతాకాలం",
+        "Spring | వసంత కాలం",
+        "Summer | గ్రీష్మకాలం",
+        "Autumn | శరదృతువు"
+      ],
+      "correctAnswer": 1
+    },
+    "18": {
+      "text": "The relationship in Song of Solomon is best described as between whom? | సొలొమోను గీతాలలోని సంబంధం ప్రధానంగా ఎవరి మధ్య ఉంటుంది?",
+      "image": "",
+      "difficulty": "Easy",
+      "options": [
+        "Brothers | సోదరులు",
+        "Friends | స్నేహితులు",
+        "Lovers | ప్రియులు",
+        "Rivals | ప్రతిద్వంద్వులు"
+      ],
+      "correctAnswer": 2
+    },
+    "19": {
+      "text": "Which city is mentioned in the Song of Solomon as a place of search? | సొలొమోను గీతాలలో వెతుకులాట జరిగే నగరం ఏది?",
+      "image": "",
+      "difficulty": "Medium",
+      "options": [
+        "Jerusalem | యెరూషలేము",
+        "Bethlehem | బేత్లహేము",
+        "Nazareth | నజరేతు",
+        "Samaria | సమరియా"
+      ],
+      "correctAnswer": 0
+    },
+    "20": {
+      "text": "What is the central message of the Song of Solomon? | సొలొమోను గీతాల కేంద్ర సందేశం ఏమిటి?",
+      "image": "",
+      "difficulty": "Hard",
+      "options": [
+        "Political power | రాజకీయ శక్తి",
+        "Human romantic love honored by God | దేవుడు గౌరవించిన మానవీయ ప్రేమ",
+        "Military victory | సైనిక విజయం",
+        "Temple worship | మందిర ఆరాధన"
+      ],
+      "correctAnswer": 1
+    }
+  }
+}

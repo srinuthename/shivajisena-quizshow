@@ -1,0 +1,105 @@
+{
+  "users": [
+    {
+      "ytChannelId": "dummy_user_001",
+      "userName": "QuizMaster2024",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=quizmaster2024"
+    },
+    {
+      "ytChannelId": "dummy_user_002",
+      "userName": "TriviaKing",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=triviaking"
+    },
+    {
+      "ytChannelId": "dummy_user_003",
+      "userName": "BrainiacBoss",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=brainiacboss"
+    },
+    {
+      "ytChannelId": "dummy_user_004",
+      "userName": "SmartCookie99",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=smartcookie99"
+    },
+    {
+      "ytChannelId": "dummy_user_005",
+      "userName": "QuizWhiz_Pro",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=quizwhizpro"
+    },
+    {
+      "ytChannelId": "dummy_user_006",
+      "userName": "ThinkFast123",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=thinkfast123"
+    },
+    {
+      "ytChannelId": "dummy_user_007",
+      "userName": "GeniusGamer",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=geniusgamer"
+    },
+    {
+      "ytChannelId": "dummy_user_008",
+      "userName": "WisdomSeeker",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=wisdomseeker"
+    },
+    {
+      "ytChannelId": "dummy_user_009",
+      "userName": "QuizNinja_X",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=quizninjax"
+    },
+    {
+      "ytChannelId": "dummy_user_010",
+      "userName": "MindMaster77",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=mindmaster77"
+    },
+    {
+      "ytChannelId": "dummy_user_011",
+      "userName": "TriviaTitan",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=triviatitan"
+    },
+    {
+      "ytChannelId": "dummy_user_012",
+      "userName": "KnowledgeKid",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=knowledgekid"
+    },
+    {
+      "ytChannelId": "dummy_user_013",
+      "userName": "PuzzlePro2024",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=puzzlepro2024"
+    },
+    {
+      "ytChannelId": "dummy_user_014",
+      "userName": "QuickThinker",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=quickthinker"
+    },
+    {
+      "ytChannelId": "dummy_user_015",
+      "userName": "BrainStorm99",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=brainstorm99"
+    },
+    {
+      "ytChannelId": "dummy_user_016",
+      "userName": "SharpMindX",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=sharpmindx"
+    },
+    {
+      "ytChannelId": "dummy_user_017",
+      "userName": "CleverCat123",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=clevercat123"
+    },
+    {
+      "ytChannelId": "dummy_user_018",
+      "userName": "WittyWizard",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=wittywizard"
+    },
+    {
+      "ytChannelId": "dummy_user_019",
+      "userName": "LogicLord",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=logiclord"
+    },
+    {
+      "ytChannelId": "dummy_user_020",
+      "userName": "FactFinder88",
+      "ytProfilePicUrl": "https://i.pravatar.cc/150?u=factfinder88"
+    }
+  ],
+  "teams": ["east", "west", "north", "south"]
+}
