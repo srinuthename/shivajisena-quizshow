@@ -200,35 +200,26 @@ const TeamQuizInner = () => {
     const checkSession = async () => {
       let activeSession = getActiveSession();
 
-      // --- Refresh recovery: sessionStorage is wiped on reload, but
-      // latest quiz session config snapshot is in IndexedDB and survives. ---
+      // Refresh recovery: sessionStorage can be absent after reload, but
+      // active runtime config/session data is kept in localStorage until quiz end.
       if (!activeSession) {
         try {
-          const latestSnapshot = await readLatestQuizSessionConfigSnapshot();
-          if (latestSnapshot) {
-            const { sessionId, snapshot } = latestSnapshot;
-            const recoveredGameId = String(
-              (snapshot?.frontendQuizGameId as string | undefined) ||
-              frontendQuizGameId ||
-              searchParams.get('gameId') ||
-              ''
-            ).trim();
-            const recoveredEpisodeNumber = String(
-              (snapshot?.episodeNumber as string | undefined) ||
-              branding?.episodeNumber ||
-              ''
-            ).trim();
-            if (sessionId && recoveredGameId) {
-              activeSession = startActiveSession(sessionId, recoveredGameId, recoveredEpisodeNumber || '1');
-              activeSession = startActiveSession(sessionId, recoveredGameId, recoveredEpisodeNumber || '1', {
-                startedAt: Number((snapshot?.startedAt as number | undefined) || Date.now()),
-              });
-              console.log('[Quiz] Revived active session from localStorage after refresh:', sessionId);
-            }
+          const runConfig = readActiveQuizRunConfigSync(frontendQuizGameId || searchParams.get('gameId'));
+          const recoveredGameId = String(runConfig?.frontendQuizGameId || frontendQuizGameId || searchParams.get('gameId') || '').trim();
+          if (runConfig && recoveredGameId) {
+            activeSession = startActiveSession(
+              crypto.randomUUID(),
+              recoveredGameId,
+              runConfig.episodeNumber || branding?.episodeNumber || '1',
+              {
+                startedAt: Number(runConfig.runtime?.startedAtMs || Date.now()),
+                skipInitialBackendRestore: Boolean(runConfig.runtime?.skipInitialBackendRestore),
+              }
+            );
+            console.log('[Quiz] Revived active session from runtime storage after refresh:', recoveredGameId);
           }
-          const durableFrontendGameId = String(frontendQuizGameId || activeSession?.frontendGameId || searchParams.get('gameId') || '').trim();
         } catch {
-          // corrupt snapshot — fall through to redirect
+          // corrupt runtime storage — fall through to redirect
         }
       }
 
@@ -245,7 +236,7 @@ const TeamQuizInner = () => {
         console.log('[Quiz] Recovered active session from durable storage:', durableSessionId);
       }
 
-      // Restore runtime snapshot from IndexedDB if localStorage copy is missing.
+      // Restore runtime session questions from localStorage if in-memory data was lost.
       if (activeSession && !hasSessionData()) {
         await restoreSessionDataFromIndexedDb();
       }
