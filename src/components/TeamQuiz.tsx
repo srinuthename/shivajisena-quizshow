@@ -307,7 +307,8 @@ const TeamQuizInner = () => {
       await createSessionQuestions(
         settings.questionsPerCategory,
         settings.maxUsedCount,
-        settings.shuffleEnabled
+        settings.shuffleEnabled,
+        settings.topicSettings || readAdminJson("topicSettings", {})
       );
       setSessionPools(getSessionPools());
       setSessionSubjects(getSessionSubjects());
@@ -1574,7 +1575,7 @@ const TeamQuizInner = () => {
           questionIndex: payload.questionIndex as number,
           correctChoiceIndex: correctIdx ? parseInt(correctIdx, 10) : -1,
           openedAt,
-          durationMs: parseInt(localStorage.getItem('timerDuration') || '90', 10) * 1000,
+          durationMs: timerDuration * 1000,
         });
       } else if (action === 'close') {
         const qIdx = payload.questionIndex ?? sessionStorage.getItem('currentQuestionIndex');
@@ -3200,6 +3201,7 @@ const TeamQuizInner = () => {
       clearQuizRuntimeContext();
       setApiFrontendQuizGameId(null);
       clearFinalLeaderboardSnapshot();
+      clearQuizRunConfig(frontendQuizGameId || streamFrontendQuizGameId || null);
       try {
         localStorage.removeItem('quizMirrorView');
         localStorage.removeItem('quizMirrorViewerState');
