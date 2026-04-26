@@ -1034,17 +1034,21 @@ const PrizeAssignmentsPage = ({ embedded = false }: { embedded?: boolean }) => {
   }, []);
 
   const saveAwardInline = useCallback(async (award: PrizeAwardRecord) => {
-    const draft = awardEdits[award._id] || {
+    const draft: AwardInlineEdit = awardEdits[award._id] || {
       prizeType: award.prizeType,
       prizeInstance: Number(award.prizeInstance || 1),
       candidateChannelId: String(award.candidateChannelId || award.assignedChannelId || ""),
       assignedChannelId: String(award.assignedChannelId || ""),
       category: (award.category || "regular") as PrizeCategory,
+      prizeModality: (award.prizeModality || "coupon") as PrizeModality,
       couponCode: String(award.couponCode || ""),
       couponProvider: String(award.couponProvider || ""),
       couponTitle: String(award.couponTitle || ""),
       couponValueLabel: String(award.couponValueLabel || ""),
       couponRedeemUrl: String(award.couponRedeemUrl || ""),
+      cashAmount: award.cashAmount != null ? String(award.cashAmount) : "",
+      cashCurrency: String(award.cashCurrency || "INR"),
+      cashReference: String(award.cashReference || ""),
     };
 
     const assignedChannelId = String(draft.assignedChannelId || "").trim();
